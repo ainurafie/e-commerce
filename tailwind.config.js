@@ -6,7 +6,14 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      "poppins": ["Poppins", "sans-serif"],
+      "roboto": ["Roboto", "sans-serif"],
+      "inter": ["Inter", "sans-serif"],
+      "montserrat": ["Montserrat", "sans-serif"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ]
 }
