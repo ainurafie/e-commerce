@@ -54,48 +54,33 @@
         </div>
         <div class="grid grid-cols-2 w-full py-16 justify-items-center">
             <a href="/" class="relative hover:brightness-75 mb-[14px]">
-                <div class="">
-                    <img src="../assets/images/sehat.svg" alt=""
-                        class="lg:h-[237px] lg:w-[504px] rounded-lg">
-                </div>
-                <div class="absolute lg:top-[75px] lg:left-5 top-[60px] left-5">
-                    <h1 class=" text-white font-aileron-bold lg:text-5xl text-xl">Baca Artikel</h1>
-
+                <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
+                    style="background-image: url('../assets/images/sehat.svg');">
+                    <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Sehat <br /> Untuk Tubuh
+                    </h1>
                 </div>
             </a>
-            <a href="/museum" class="relative hover:brightness-75 mb-[14px]">
-                <div class="">
-                    <img src="../assets/images/hand.svg" alt=""
-                        class="lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5">
-                </div>
-                <div class="absolute lg:top-[60px] lg:left-5 top-[78px] left-5">
-                    <h1 class=" text-white font-aileron-bold lg:text-5xl text-xl">Kunjungi
-                        e-museum</h1>
+            <a href="/" class="relative hover:brightness-75 mb-[14px]">
+                <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
+                    style="background-image: url('../assets/images/hand.svg');">
+                    <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Hand Craft</h1>
                 </div>
             </a>
-            <a href="/team" class="relative hover:brightness-75">
-                <div class="">
-                    <img src="../assets/images/kopi.svg" alt=""
-                        class="lg:h-[237px] lg:w-[504px] rounded-lg">
-                </div>
-                <div class="absolute lg:top-[75px] lg:left-5 top-[60px] left-5">
-                    <h1 class=" text-white font-aileron-bold lg:text-5xl text-xl">Tim ABAD</h1>
-
+            <a href="/" class="relative hover:brightness-75">
+                <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
+                    style="background-image: url('../assets/images/kopi.svg');">
+                    <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Kopi</h1>
                 </div>
             </a>
-            <a href="/kontak" class="relative hover:brightness-75">
-                <div class="">
-                    <img src="../assets/images/khas.svg" alt=""
-                        class="lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5">
-                </div>
-                <div class="absolute lg:top-[75px] lg:left-5 top-[75px] left-5">
-                    <h1 class=" text-white font-aileron-bold lg:text-5xl text-xl">Hubungi kami</h1>
-
+            <a href="/" class="relative hover:brightness-75">
+                <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
+                    style="background-image: url('../assets/images/khas.svg');">
+                    <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Khas <br/> Purwokerto</h1>
                 </div>
             </a>
         </div>
     </div>
-    <livewire:footer.index/>    
+    <livewire:footer.index />
     <script>
         var mainNav = document.getElementById("main-nav");
         var toggleMenuIcon = document.getElementById("toggle-menu-icon");
