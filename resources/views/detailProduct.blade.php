@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title>Landing</title>
     @vite('resources/css/app.css')
 
@@ -356,7 +357,7 @@
                         </div>
                         <div class="flex gap-2">
                             <button class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Beli Sekarang</button>
-                            <button class="bg-white shadow font-montserrat font-semibold text-sm text-[#004E11] rounded-lg py-2 px-3">Beli Sekarang</button>
+                            <button data-modal-toggle="add-cart" class="bg-white shadow font-montserrat font-semibold text-sm text-[#004E11] rounded-lg py-2 px-3">Tambhah Keranjang</button>
                         </div>
                     </div>
                 </div>
@@ -364,6 +365,8 @@
         </div>
     </div>
     <livewire:footer.index />
+    <livewire:modal.tambah-keranjang />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
         var mainNav = document.getElementById("main-nav");
         var toggleMenuIcon = document.getElementById("toggle-menu-icon");
