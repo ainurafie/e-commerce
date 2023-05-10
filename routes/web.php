@@ -22,3 +22,6 @@ Route::get('/detail-product', function () {
 Route::get('/beli-produk', function () {
     return view('beli-produk');
 });
+Route::get('/detail-toko', function () {
+    return view('detailToko');
+});

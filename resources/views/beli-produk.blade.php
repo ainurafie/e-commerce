@@ -20,7 +20,7 @@
 
 <body>
     <livewire:navbar.index />
-    <div class="md:px-24 mt-1">
+    <div class="md:px-24 mt-1 py-20">
         <h1 class="text-xl font-montserrat font-semibold">Beli Produk</h1>
         <div class="container justify-center flex">
             <div class="">
