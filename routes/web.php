@@ -25,3 +25,18 @@ Route::get('/beli-produk', function () {
 Route::get('/detail-toko', function () {
     return view('detailToko');
 });
+Route::get('/wedding-organizer', function () {
+    return view('weddingOrganizer');
+});
+Route::get('/makanan-minuman', function () {
+    return view('makananMinuman');
+});
+Route::get('/fashion', function () {
+    return view('fashionKategori');
+});
+Route::get('/profile-user', function () {
+    return view('profileUser');
+});
+Route::get('/pertanian-kategori', function () {
+    return view('pertanianKategori');
+});
