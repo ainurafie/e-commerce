@@ -40,3 +40,6 @@ Route::get('/profile-user', function () {
 Route::get('/pertanian-kategori', function () {
     return view('pertanianKategori');
 });
+Route::get('/keranjang', function () {
+    return view('keranjang');
+});
