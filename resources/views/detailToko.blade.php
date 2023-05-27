@@ -13,7 +13,7 @@
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    <title>Landing</title>
+    <title>Detail Toko</title>
     @vite('resources/css/app.css')
 
 </head>
@@ -24,7 +24,7 @@
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="bg-[#D4EDDA] px-24 py-11 rounded-lg">
             <div class="bg-white px-[52px] py-[10px] grid grid-cols-12 rounded-lg">
-                <div class="col-span-4 border-r ">
+                <div class="col-span-8 border-r ">
                     <div class="flex gap-5 items-center ">
                         <img src="../assets/images/logo.svg" alt="" class="w-24 h-24 rounded-full">
                         <div class="">

@@ -13,7 +13,7 @@
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    <title>Landing</title>
+    <title>UMKM Banyumasan</title>
     @vite('resources/css/app.css')
 
 </head>
@@ -24,11 +24,11 @@
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="mb-[14px] grid grid-cols-12">
             <div class="col-span-8">
-                <img class="h-[458px] w-full rounded-xl" src="../assets/images/product.svg" alt="">
+                <img class="h-[512px] w-full rounded-24px" src="../assets/images/product.svg" alt="">
             </div>
-            <div class="col-span-4 space-y-[18px] ml-[18px]">
+            <div class="col-span-4 space-y-[18px] ml-[px]">
                 <img class="rounded-xl w-full" src="../assets/images/product.svg" alt="">
-                <img class="rounded-xl w-full" src="../assets/images/product.svg" alt="">
+                <img class="rounded-xl w-full" src="../assets/images/produx.png" alt="">
             </div>
         </div>
         <h1 class="text-xl font-montserrat font-semibold mb-[14px]">Deskripsi</h1>
@@ -56,7 +56,47 @@
             <div class="col-span-6">
                 <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
-                        <img src="../assets/images/marsha.png" alt="" class="rounded-full w-11 h-11">
+                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
+                    </div>
+                    <div class="col-span-11 border-b border-[#CECECE]">
+                        <h1 class="text-sm font-montserrat font-semibold mb-2">Kim Kim Tae</h1>
+                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam yang
+                            lalu</h1>
+                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
+                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
+                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
+                        <div class="flex gap-2 mb-4">
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
+                                    fill="#FFDD2A" />
+                            </svg>
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
+                                    fill="#FFDD2A" />
+                            </svg>
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
+                                    fill="#FFDD2A" />
+                            </svg>
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
+                                    fill="#FFDD2A" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 mb-6">
+                    <div class="col-span-1">
+                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
                     </div>
                     <div class="col-span-11 border-b border-[#CECECE]">
                         <h1 class="text-sm font-montserrat font-semibold mb-2">Marsha Lenathea Lamia</h1>
@@ -96,50 +136,10 @@
                 </div>
                 <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
-                        <img src="../assets/images/marsha.png" alt="" class="rounded-full w-11 h-11">
+                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
                     </div>
                     <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Marsha Lenathea Lamia</h1>
-                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam yang
-                            lalu</h1>
-                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
-                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
-                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
-                        <div class="flex gap-2 mb-4">
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-12 mb-6">
-                    <div class="col-span-1">
-                        <img src="../assets/images/marsha.png" alt="" class="rounded-full w-11 h-11">
-                    </div>
-                    <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Marsha Lenathea Lamia</h1>
+                        <h1 class="text-sm font-montserrat font-semibold mb-2">Kim Taehyung</h1>
                         <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam
                             yang
                             lalu</h1>
@@ -177,10 +177,10 @@
                 </div>
                 <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
-                        <img src="../assets/images/marsha.png" alt="" class="rounded-full w-11 h-11">
+                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
                     </div>
                     <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Marsha Lenathea Lamia</h1>
+                        <h1 class="text-sm font-montserrat font-semibold mb-2">Hersa Dwi Ikhsanti</h1>
                         <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam
                             yang
                             lalu</h1>
@@ -212,7 +212,6 @@
                                     d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
                                     fill="#FFDD2A" />
                             </svg>
-
                         </div>
                     </div>
                 </div>
@@ -356,8 +355,12 @@
                             </form>
                         </div>
                         <div class="flex gap-2">
-                            <button class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Beli Sekarang</button>
-                            <button data-modal-toggle="add-cart" class="bg-white shadow font-montserrat font-semibold text-sm text-[#004E11] rounded-lg py-2 px-3">Tambhah Keranjang</button>
+                        <a href="/beli-produk" class="relative hover:brightness-75">
+                            <button class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Beli Sekarang</button></a>
+                            <a href="/tambah-keranjang" class="relative hover:brightness-75 mb-[14px]"></a>
+
+                            <button data-modal-toggle="add-cart" class="bg-white shadow font-montserrat font-semibold text-sm text-[#004E11] rounded-lg py-2 px-3">Tambah Keranjang</button>
+
                         </div>
                     </div>
                 </div>
@@ -411,7 +414,6 @@
 
                 });
             }
-
         }
 
         countItems();

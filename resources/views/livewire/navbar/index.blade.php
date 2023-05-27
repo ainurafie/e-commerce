@@ -1,10 +1,10 @@
 <div>
 
-    <nav class="relative px-5 flex justify-between items-center h-14 md:h-28 bg-white drop-shadow-md">
+    <nav class="fixed w-full z-50 top-0 flex justify-between items-center h-14 md:h-28 bg-white drop-shadow-md">
         <!-- Logo -->
         <div>
-            <a href="#" class="text-white text-2xl font-semibold italic">
-                KINDA<span class="text-amber-500">CODE</span>
+            <a href="/" class="text-white text-2xl font-semibold italic">
+                KINDA<span class="text-amber-500">LOGO</span>
             </a>
         </div>
 
@@ -38,17 +38,37 @@
                         fill="#949D96" />
                 </svg>
             </button>
-            <div class="flex gap-3 items-center rounded-lg shadow px-2 py-1" style="background-color: #FCFCFC">
-                <img src="../assets/images/marsha.png" alt="" class="rounded-full w-11 h-11">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M11.646 15.146L5.85399 9.354C5.78394 9.28413 5.7362 9.19505 5.7168 9.09804C5.6974 9.00102 5.70722 8.90043 5.74501 8.809C5.7828 8.71757 5.84687 8.6394 5.92911 8.5844C6.01135 8.52939 6.10805 8.50002 6.20699 8.5H17.793C17.8919 8.50002 17.9886 8.52939 18.0709 8.5844C18.1531 8.6394 18.2172 8.71757 18.255 8.809C18.2928 8.90043 18.3026 9.00102 18.2832 9.09804C18.2638 9.19505 18.216 9.28413 18.146 9.354L12.353 15.146C12.2592 15.2397 12.1321 15.2924 11.9995 15.2924C11.8669 15.2924 11.7397 15.2397 11.646 15.146Z"
-                        fill="#CFCFCF" />
-                </svg>
+            
+            <!-- Dropdown-->
+            
+<button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-monttserat font-regular text-gray-500 rounded-lg hover:text-grey-600 dark:hover:text-black-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
+    <span class="sr-only">Open user menu</span>
+    <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
+    Kim Taehyung
+    <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+</button>
 
-            </div>
-        </div>
+<!-- Dropdown menu -->
+<div id="dropdownAvatarName" class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg shadow w-44 dark:bg-black-700 dark:divide-gray-600">
+    <div class="px-4 py-3 text-sm font-monttserat text-gray-900 dark:text-white">
+      <div class="font-bold ">Kim Taehyung</div>
+      <div class="truncate">name@flowbite.com</div>
+    </div>
+    <ul class="py-2 text-sm text-gray-700 dark:text-#fefefe-200" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
+      <li>
+        <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+      </li>
+      <li>
+    </ul>
+    <div class="py-2">
+      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+    </div>
+</div>
+</div>
+</div>
 
         <!-- The hamburger icon to open/close the #main-nav when screen width < 768px (mobile devices) -->
         <a class="md:hidden text-white text-2xl" href="javascript:void(0)" onclick="toggleMenu()"><i
