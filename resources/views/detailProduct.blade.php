@@ -15,16 +15,69 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title>UMKM Banyumasan</title>
     @vite('resources/css/app.css')
+    <style>
+        /* Styling untuk radio button */
+        .radio-input {
+            display: none;
+        }
 
+        .radio-input2 {
+            display: none;
+        }
+
+        .content {
+            display: none;
+        }
+
+        /* Styling untuk label radio button */
+        .radio-label {
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #D4EDDA;
+            border-radius: 8px;
+            width: 53px;
+            height: 53px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5A5A5A;
+            cursor: pointer;
+        }
+
+        .radio-label2 {
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #D4EDDA;
+            border-radius: 8px;
+            padding: 17px 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5A5A5A;
+            cursor: pointer;
+        }
+
+        /* Styling untuk label radio button yang dipilih */
+        .radio-input:checked+.radio-label {
+            background-color: #2AA345;
+            color: white;
+        }
+
+        .radio-input2:checked+.radio-label2 {
+            background-color: #2AA345;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <livewire:navbar.index />
-    <div class="md:px-24 mt-1">
+    <div class="md:px-24 mt-24">
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
-        <div class="mb-[14px] grid grid-cols-12">
+        <div class="mb-[14px] grid grid-cols-12 gap-10 items-center">
             <div class="col-span-8">
-                <img class="h-[512px] w-full rounded-24px" src="../assets/images/product.svg" alt="">
+                <img class="h-[512px] w-full rounded-2xl" src="../assets/images/product.svg" alt=""
+                    style="border-radius: 24px;">
             </div>
             <div class="col-span-4 space-y-[18px] ml-[px]">
                 <img class="rounded-xl w-full" src="../assets/images/product.svg" alt="">
@@ -236,7 +289,7 @@
                         ulasan</button>
                 </div>
             </div>
-            <div class=" col-span-6 pl-20 ">
+            <div class=" col-span-6 pl-16 ">
                 <div class="bg-[#FDFDFD] rounded flex w-full">
                     <div class="">
                         <svg width="204" height="214" viewBox="0 0 204 214" fill="none"
@@ -400,9 +453,9 @@
                             <div class="flex gap-2 border-b w-max">
                                 <a href="/beli-produk" class="relative hover:brightness-75 mb-3">
                                     <button
-                                        class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Beli
+                                        class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Pesan
                                         Sekarang</button></a>
-                                <button data-modal-toggle="add-cart"
+                                <button data-modal-toggle="size"
                                     class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
                                     Keranjang</button>
                             </div>
@@ -418,6 +471,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -427,6 +481,7 @@
         <livewire:footer.index />
     </div>
     <livewire:modal.tambah-keranjang />
+    <livewire:modal.ukuran />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
         var mainNav = document.getElementById("main-nav");
