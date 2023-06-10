@@ -52,7 +52,7 @@
                         </div>
                     </button>
                     <div class="accordion-content hidden">
-                        <button href="" class="w-full">
+                        <button data-modal-toggle="payment-modal" href="" class="w-full">
                             <div class="flex gap-5 items-center px-8 py-4 bg-[#FAFAFA] shadow hover:bg-[#D4EDDA] rounded-lg mb-[10px]">
                                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -139,6 +139,7 @@
     </div>
     <livewire:footer.index />
     <livewire:modal.tambah-keranjang />
+    <livewire:modal.payment />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
         const accordionButton = document.querySelector('.accordion-button');
