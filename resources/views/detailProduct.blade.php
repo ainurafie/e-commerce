@@ -72,7 +72,7 @@
 
 <body>
     <livewire:navbar.index />
-    <div class="md:px-24 mt-24">
+    <div class="md:px-24 mt-48">
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="mb-[14px] grid grid-cols-12 gap-10 items-center">
             <div class="col-span-8">
@@ -95,7 +95,7 @@
             fermentum semper. Pulvinar et lacus cras elit consectetur interdum euismod amet.</h1>
         <div class="flex gap-2 mb-[50px]">
             <h1 class="text-[10px] text-[#919191] font-montserrat font-semibold">Apakah produk ini ada masalah?</h1>
-            <button class="flex items-center gap-1">
+            <button data-modal-toggle="lapor" class="flex items-center gap-1">
                 <h1 class="text-[10px] text-[#931E1E] font-montserrat font-semibold">Laporkan</h1>
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -460,7 +460,7 @@
                                     Keranjang</button>
                             </div>
                             <div class="flex justify-center mt-2">
-                                <button class="flex gap-1 items-center">
+                                <button data-modal-toggle="chat" class="flex gap-1 items-center">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -482,6 +482,8 @@
     </div>
     <livewire:modal.tambah-keranjang />
     <livewire:modal.ukuran />
+    <livewire:modal.laporkan />
+    <livewire:modal.chat />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
         var mainNav = document.getElementById("main-nav");
