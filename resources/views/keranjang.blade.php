@@ -74,7 +74,7 @@
                                 </td>
                                 <td class=" px-4 py-2">
                                     <div class="flex items-center">
-                                        <button>
+                                        <button data-modal-toggle="delete">
                                             <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -127,6 +127,7 @@
         </div>
     </div>
     <livewire:footer.index />
+    <livewire:modal.delete />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $('#select-all').click(function() {
