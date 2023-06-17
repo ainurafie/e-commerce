@@ -68,3 +68,6 @@ Route::get('/penjual/keranjang', function () {
 Route::get('/penjual/pesanan', function () {
     return view('penjual.pesanan');
 });
+Route::get('/penjual/penjualan', function () {
+    return view('penjual.penjualan');
+});
