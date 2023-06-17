@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Sidebar\Penjual;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,4 +58,7 @@ Route::get('/super-admin/pesanan', function () {
 });
 Route::get('/super-admin/laporan', function () {
     return view('superadmin.laporan');
+});
+Route::get('/penjual', function () {
+    return view('penjual.index');
 });
