@@ -38,41 +38,49 @@
                         fill="#949D96" />
                 </svg>
             </button>
-            
+
             <!-- Dropdown-->
-            
-<button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-monttserat font-regular text-gray-500 rounded-lg hover:text-grey-600 dark:hover:text-black-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
-    <span class="sr-only">Open user menu</span>
-    <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
-    Kim Taehyung
-    <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-</button>
 
-<!-- Dropdown menu -->
-<div id="dropdownAvatarName" class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg shadow w-44 dark:bg-black-700 dark:divide-gray-600">
-    <div class="px-4 py-3 text-sm font-monttserat text-gray-900 dark:text-white">
-      <div class="font-bold ">Kim Taehyung</div>
-      <div class="truncate">name@flowbite.com</div>
-    </div>
-    <ul class="py-2 text-sm text-gray-700 dark:text-#fefefe-200" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
-      <li>
-        <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-      </li>
-      <li>
-    </ul>
-    <div class="py-2">
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-    </div>
-</div>
-</div>
+            <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
+                class="flex items-center text-monttserat font-regular text-gray-500 rounded-lg hover:text-grey-600  "
+                type="button">
+                <span class="sr-only">Open user menu</span>
+                <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
+                Kim Taehyung
+                <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div id="dropdownAvatarName"
+                class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg shadow w-44">
+                <div class="px-4 py-3 text-sm font-monttserat text-gray-900">
+                    <div class="font-bold ">Kim Taehyung</div>
+                    <div class="truncate">name@flowbite.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
+                    <li>
+                        <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                    </li>
+                    <li>
+                </ul>
+                <div class="py-2">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                </div>
+            </div>
+        </div>
 </div>
 
-        <!-- The hamburger icon to open/close the #main-nav when screen width < 768px (mobile devices) -->
-        <a class="md:hidden text-white text-2xl" href="javascript:void(0)" onclick="toggleMenu()"><i
-                id="toggle-menu-icon" class="fa-bars fa-solid"></i></a>
+<!-- The hamburger icon to open/close the #main-nav when screen width < 768px (mobile devices) -->
+<a class="md:hidden text-white text-2xl" href="javascript:void(0)" onclick="toggleMenu()"><i id="toggle-menu-icon"
+        class="fa-bars fa-solid"></i></a>
 
-    </nav>
+</nav>
 </div>
