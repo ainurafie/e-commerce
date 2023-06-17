@@ -49,3 +49,9 @@ Route::get('/pertanian-kategori', function () {
 Route::get('/keranjang', function () {
     return view('keranjang');
 });
+Route::get('/super-admin', function () {
+    return view('superadmin.index');
+});
+Route::get('/super-admin/pesanan', function () {
+    return view('superadmin.pesanan');
+});
