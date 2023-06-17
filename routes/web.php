@@ -62,3 +62,9 @@ Route::get('/super-admin/laporan', function () {
 Route::get('/penjual', function () {
     return view('penjual.index');
 });
+Route::get('/penjual/keranjang', function () {
+    return view('penjual.keranjang');
+});
+Route::get('/penjual/pesanan', function () {
+    return view('penjual.pesanan');
+});
