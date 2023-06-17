@@ -55,3 +55,6 @@ Route::get('/super-admin', function () {
 Route::get('/super-admin/pesanan', function () {
     return view('superadmin.pesanan');
 });
+Route::get('/super-admin/laporan', function () {
+    return view('superadmin.laporan');
+});
