@@ -30,7 +30,7 @@
 <body>
     <livewire:sidebar.super-admin />
     <div class="p-4 px-12 py-[97px] sm:ml-64 h-full">
-        <h1 class="text-black text-xl font-montserrat font-semibold mb-6">Pesanan</h1>
+        <h1 class="text-black text-xl font-montserrat font-semibold mb-6">laporan</h1>
         <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-[#ECFFEC]">
