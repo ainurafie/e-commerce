@@ -23,13 +23,15 @@
             <div class="flex gap-16 justify-center">
                 <img src="../assets/images/register.svg" alt="" class="h-[412px]">
                 <div class="bg-white py-9 rounded-xl px-14 w-[480px]">
+                <form method="POST" action="{{ route('register.store') }}">
+                    @csrf
                     <div class="flex h-full flex-col justify-center">
                         <h1 class="text-sm font-montserrat text-[#0C0C0C] text-center font-semibold mb-3">Register</h1>
                         <div class="relative mb-5">
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Nama
                             </h1>
-                            <input type="text" id="nama"
+                            <input type="text" id="nama" name="name"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                         </div>
@@ -37,7 +39,7 @@
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Username
                             </h1>
-                            <input type="text" id="username"
+                            <input type="text" id="username" name="username"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                         </div>
@@ -45,7 +47,7 @@
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Email
                             </h1>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                         </div>
@@ -53,14 +55,23 @@
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Password
                             </h1>
-                            <input type="text" id="password"
+                            <input type="text" id="password" name="password"
+                                class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required>
+                        </div>
+                        <div class="relative mb-5">
+                            <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
+                                Role
+                            </h1>
+                            <input type="text" id="password" name="role"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                         </div>
                         <div class="w-full">
-                            <button class="p-[10px] text-white bg-[#004E11] font-semibold rounded-lg w-full mb-4">Daftar</button>
+                            <button type="submit" class="p-[10px] text-white bg-[#004E11] font-semibold rounded-lg w-full mb-4">Daftar</button>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
