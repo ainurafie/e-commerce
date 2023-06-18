@@ -47,7 +47,7 @@
                 </div>
                 <canvas id="chart2" class=></canvas>
                 <div class="flex justify-end">
-                    <a href="" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
+                    <a href="/super-admin/pesanan" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
                 </div>
             </div>
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
@@ -56,7 +56,7 @@
                 </div>
                 <canvas id="chart3" class=></canvas>
                 <div class="flex justify-end">
-                    <a href="" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
+                    <a href="/super-admin/laporan" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
                 </div>
             </div>
         </div>
