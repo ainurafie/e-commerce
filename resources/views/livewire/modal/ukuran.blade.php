@@ -23,7 +23,7 @@
                         value="XL">
                     <label for="size-xl" class="radio-label">XL</label>
                 </div>
-                <h1 class="text-sm text-black font-montserrat font-medium mb-[14px]">Pilih Ukuran
+                <h1 class="text-sm text-black font-montserrat font-medium mb-[14px]">Varian Produk
                 </h1>
                 <div class="flex gap-[14px] mb-10 ">
     
