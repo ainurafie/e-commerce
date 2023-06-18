@@ -87,7 +87,7 @@
                                 Jennie Rubyjane
                             </td>
                             <td class="px-6 py-4 truncate">
-                                <button data-modal-toggle="pesanan">
+                                <button data-modal-toggle="pesanan-penjual">
                                     Manik Manik Imut
 
                                 </button>
@@ -114,7 +114,7 @@
                                 Jennie Rubyjane
                             </td>
                             <td class="px-6 py-4 truncate">
-                                <button data-modal-toggle="pesanan">
+                                <button data-modal-toggle="pesanan-penjual">
                                     Manik Manik Imut
 
                                 </button>
@@ -146,7 +146,7 @@
     <div class="mt-80">
         <livewire:footer.index />
     </div>
-    <livewire:modal.pesenan />
+    <livewire:modal.pesanan-penjual />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
