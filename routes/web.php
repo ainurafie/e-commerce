@@ -71,3 +71,6 @@ Route::get('/penjual/pesanan', function () {
 Route::get('/penjual/penjualan', function () {
     return view('penjual.penjualan');
 });
+Route::get('/penjual/ulasan', function () {
+    return view('penjual.ulasan');
+});
