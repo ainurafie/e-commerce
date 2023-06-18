@@ -46,7 +46,7 @@
                 type="button">
                 <span class="sr-only">Open user menu</span>
                 <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
-                Kim Taehyung
+                {{ Auth::guest() ? 'Unknow' : Auth::user()->name }}
                 <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -72,7 +72,7 @@
                     <li>
                 </ul>
                 <div class="py-2">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                    <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
                 </div>
             </div>
         </div>
