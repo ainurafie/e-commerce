@@ -4,12 +4,14 @@
     <div class="relative p-4 w-full max-w-xl h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative rounded-lg px-5 py-8 shadow max-h-[400px] overflow-y-auto bg-white">
+        <form method="POST" action="{{ route('produk.store') }} " enctype="multipart/form-data">
+        @csrf
             <h1 class="text-base text-black font-montserrat font-semibold mb-8">Tambah Produk</h1>
             <div class="relative mb-5  mt-8">
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                     Nama Produk <label class="text-[#CB3A26]">*</label>
                 </h1>
-                <input type="text" id="nama"
+                <input type="text" id="nama" name="name"
                     class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
                     placeholder="Nama produk" required>
             </div>
@@ -17,7 +19,7 @@
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                     Stok Barang <label class="text-[#CB3A26]">*</label>
                 </h1>
-                <input type="number" id="stok"
+                <input type="number" id="stok" name="stok"
                     class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
                     placeholder="Isi stok barang" required>
             </div>
@@ -25,19 +27,19 @@
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                     Harga <label class="text-[#CB3A26]">*</label>
                 </h1>
-                <input type="number" id="stok"
+                <input type="number" id="stok" name="harga"
                     class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
                     placeholder="Isi Harga Barang" required>
             </div>
             <div class="relative mb-5">
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
-                    Harga <label class="text-[#CB3A26]">*</label>
+                    Jenis <label class="text-[#CB3A26]">*</label>
                 </h1>
                 <div class="">
-                    <select name=""
+                    <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
                         <option value="" selected>Pilih jenis produk</option>
-                        <option value=""></option>
+                        <option value="fashion">Fashion</option>
                     </select>
                 </div>
             </div>
@@ -45,7 +47,7 @@
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                     Deskripsi<label class="text-[#CB3A26]">*</label>
                 </h1>
-                <textarea rows="2"
+                <textarea rows="2" name="deskripsi"
                     class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
                     placeholder="Tuliskan deskripsi produk">
                 </textarea>
@@ -112,9 +114,10 @@
                 </button>
             </div>
             <div class="flex justify-end gap-[14px]">
-                <button
+                <button type="submit"
                     class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#2AA345] rounded-lg py-2.5 px-6">Tambah Produk</button>
             </div>
+        </form>
         </div>
     </div>
 </div>

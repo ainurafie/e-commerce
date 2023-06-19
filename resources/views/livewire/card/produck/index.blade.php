@@ -1,18 +1,15 @@
-<div>
+@foreach ($data as $d)
     <div class="w-[278px] rounded overflow-hidden shadow-lg">
-    <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]">     
-    <img class="w-full" src="../assets/images/produk.png" alt="Gambar gagal load">
-</a>
+        <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]"><img class="w-full" src="{{ Storage::url($d->gambar) }}" alt="Gambar gagal load"></a>
         <div class="px-6 py-4">
             <div class="font-bold text-lg font-montserrat mb-2 line-clamp-1">
             <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]">   
-            Nama Produk</div>
+            {{ $d->nama }}</div>
             <p class="text-[#919191] text-xs mb-5 line-clamp-1">
             <a href="/detail-toko" class="relative hover:brightness-75 mb-[14px]">    
-            Nama Toko
-        </a>
+            Nama Toko</a>
             </p>
-            <h1 class="text-[#CB3A26] text-base font-montserrat font-medium">Rp43.000</h1>
+            <h1 class="text-[#CB3A26] text-base font-montserrat font-medium">{{ $d->harga }}</h1>
             <div class="flex justify-between mt-3 items-center">
                 <div class="w-full">
                     <h1 class="text-xs text-[#919191] font-montserrat">Banyumas</h1>
@@ -29,4 +26,4 @@
             </div>
         </div>
     </div>
-</div>
+@endforeach
