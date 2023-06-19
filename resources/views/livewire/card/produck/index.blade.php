@@ -7,12 +7,12 @@
             {{ $d->nama }}</div>
             <p class="text-[#919191] text-xs mb-5 line-clamp-1">
             <a href="/detail-toko" class="relative hover:brightness-75 mb-[14px]">    
-            Nama Toko</a>
+            {{ $d->user->Toko }}</a>
             </p>
             <h1 class="text-[#CB3A26] text-base font-montserrat font-medium">{{ $d->harga }}</h1>
             <div class="flex justify-between mt-3 items-center">
                 <div class="w-full">
-                    <h1 class="text-xs text-[#919191] font-montserrat">Banyumas</h1>
+                    <h1 class="text-xs text-[#919191] font-montserrat">{{ $d->user->alamat }}</h1>
                 </div>
                 <div class="w-full border-l border-[#cfcfcf] px-6 gap-2 flex items-center">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"

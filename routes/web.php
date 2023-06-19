@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Penjual\ProdukController;
+use App\Http\Controllers\profileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\Sidebar\Penjual;
 use Illuminate\Support\Facades\Route;
@@ -44,9 +45,7 @@ Route::get('/makanan-minuman', function () {
 Route::get('/fashion', function () {
     return view('fashionKategori');
 });
-Route::get('/profile-user', function () {
-    return view('profileUser');
-});
+Route::resource('/profile-user', profileController::class);
 Route::get('/pertanian-kategori', function () {
     return view('pertanianKategori');
 });
@@ -86,4 +85,8 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
     });
     
     Route::resource('/produk', ProdukController::class);
+});
+
+Route::get('403', function() {
+    return view('403');
 });

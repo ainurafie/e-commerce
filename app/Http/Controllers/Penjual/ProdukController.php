@@ -65,7 +65,7 @@ class ProdukController extends Controller
             'varian' => json_encode($request->group_a),
         ]);
 
-        return 'Berhasil';
+        return redirect('/penjual/produk');
     }
 
     /**

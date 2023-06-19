@@ -46,7 +46,7 @@
                 type="button">
                 <span class="sr-only">Open user menu</span>
                 <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
-                {{ Auth::guest() ? 'Unknow' : Auth::user()->name }}
+                {{ Auth::guest() ? 'Unknow' : Auth::user()->username }}
                 <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -59,8 +59,8 @@
             <div id="dropdownAvatarName"
                 class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg shadow w-44">
                 <div class="px-4 py-3 text-sm font-monttserat text-gray-900">
-                    <div class="font-bold ">Kim Taehyung</div>
-                    <div class="truncate">name@flowbite.com</div>
+                    <div class="font-bold ">{{ Auth::user()->name }}</div>
+                    <div class="truncate">{{ Auth::user()->email }}</div>
                 </div>
                 <ul class="py-2 text-sm text-gray-700" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
                     <li>

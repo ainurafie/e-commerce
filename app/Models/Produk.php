@@ -14,6 +14,6 @@ class Produk extends Model
     protected $guarded = ['id'];
 
     public function user() {
-        return $this->HasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }
