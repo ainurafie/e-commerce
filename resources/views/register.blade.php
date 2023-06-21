@@ -63,9 +63,12 @@
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Role
                             </h1>
-                            <input type="text" id="password" name="role"
-                                class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                required>
+                            <div class="flex gap-[10px]">
+                                <input type="radio" class="radio-input" name="role" id="penjual" value="penjual">
+                                <label for="penjual" class="radio-label">Penjual</label>
+                                <input type="radio" class="radio-input" name="role" id="pembeli" value="pembeli">
+                                <label for="pembeli" class="radio-label">Pembeli</label>
+                            </div>
                         </div>
                         <div class="w-full">
                             <button type="submit" class="p-[10px] text-white bg-[#004E11] font-semibold rounded-lg w-full mb-4">Daftar</button>

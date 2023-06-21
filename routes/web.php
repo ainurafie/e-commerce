@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Penjual\ProdukController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\Sidebar\Penjual;
 use Illuminate\Support\Facades\Route;
@@ -52,30 +53,37 @@ Route::get('/pertanian-kategori', function () {
 Route::get('/keranjang', function () {
     return view('keranjang');
 });
-Route::get('/super-admin', function () {
-    return view('superadmin.index');
+
+Route::prefix('/super-admin')->middleware('auth')->group(function() {
+    Route::get('/', function () {
+        return view('superadmin.index');
+    });
+    Route::get('/pesanan', function () {
+        return view('superadmin.pesanan');
+    });
+    Route::get('/laporan', function () {
+        return view('superadmin.laporan');
+    });
 });
-Route::get('/super-admin/pesanan', function () {
-    return view('superadmin.pesanan');
-});
-Route::get('/super-admin/laporan', function () {
-    return view('superadmin.laporan');
-});
-Route::get('/penjual', function () {
-    return view('penjual.index');
-});
-Route::get('/penjual/keranjang', function () {
-    return view('penjual.keranjang');
-});
-Route::get('/penjual/pesanan', function () {
-    return view('penjual.pesanan');
-});
-Route::get('/penjual/penjualan', function () {
-    return view('penjual.penjualan');
-});
-Route::get('/penjual/ulasan', function () {
-    return view('penjual.ulasan');
-});
-Route::get('/penjual/produk', function () {
-    return view('penjual.produk');
+
+
+// Routing penjual 
+Route::prefix('penjual')->middleware('auth')->group(function() {
+    Route::get('/', function () {
+        return view('penjual.index');
+    });
+    Route::get('/keranjang', function () {
+        return view('penjual.keranjang');
+    });
+    Route::get('/pesanan', function () {
+        return view('penjual.pesanan');
+    });
+    Route::get('penjualan', function () {
+        return view('penjual.penjualan');
+    });
+    Route::get('/ulasan', function () {
+        return view('penjual.ulasan');
+    });
+    
+    Route::resource('/produk', ProdukController::class);
 });
