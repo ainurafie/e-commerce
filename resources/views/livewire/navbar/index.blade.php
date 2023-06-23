@@ -30,6 +30,7 @@
                     <span class="sr-only">Search</span>
                 </button>
             </div>
+            <a href="/keranjang">
             <button class="mx-7">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +39,7 @@
                         fill="#949D96" />
                 </svg>
             </button>
-
+            </a>
             <!-- Dropdown-->
 
             <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
@@ -59,8 +60,8 @@
             <div id="dropdownAvatarName"
                 class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg shadow w-44">
                 <div class="px-4 py-3 text-sm font-monttserat text-gray-900">
-                    <div class="font-bold ">{{ Auth::user()->name }}</div>
-                    <div class="truncate">{{ Auth::user()->email }}</div>
+                    <div class="font-bold ">{{ Auth::guest() ? '' : Auth::user()->name }}</div>
+                    <div class="truncate">{{ Auth::guest() ? '' : Auth::user()->email }}</div>
                 </div>
                 <ul class="py-2 text-sm text-gray-700" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
                     <li>

@@ -15,7 +15,7 @@
             </svg>
             <div class="">
                 <h1 class="text-[#7D8E7C] font-montserrat font-medium text-sm">Terjual</h1>
-                <h1 class="text-black font-montserrat font-semibold text-xl">15 produk</h1>
+                <h1 class="text-black font-montserrat font-semibold text-xl">{{ $data->count() }} Produk</h1>
             </div>
         </div>
     </div>

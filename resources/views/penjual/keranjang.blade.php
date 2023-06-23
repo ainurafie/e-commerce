@@ -41,6 +41,8 @@
         <div class="">
             <h1 class="text-xl text-black font-montserrat font-semibold mt-2 mb-7">Keranjang</h1>
             <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">
+                @foreach ($data as $d)
+                    
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-gray-700 uppercase bg-[#ECFFEC]">
                         <tr>
@@ -49,9 +51,6 @@
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
                                 Produk
-                            </th>
-                            <th scope="col" class="px-6 py-3 truncate">
-                                No telp
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
                                tanggal
@@ -63,62 +62,34 @@
                                 Alamat
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Transaksi
+                                Harga
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
+                                {{ $d->user_id }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
+                                {{ $d->produk_id }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                08121287398823
+                                {{ $d->created_at }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                13 April 2023
+                                {{ $d->jumlah }}
                             </td>
                             <td class="px-6 py-4">
-                                2
+                                {{ $d->alamat }}
                             </td>
                             <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                            </td>
-                            <td class="px-6 py-4">
-                                COD
+                                {{$d->harga}}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b">
-                            <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                08121287398823
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                13 April 2023
-                            </td>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                            </td>
-                            <td class="px-6 py-4">
-                                Transfer
-                            </td>
-                        </tr>
-
                     </tbody>
                 </table>
+                @endforeach
             </div>
         </div>
 

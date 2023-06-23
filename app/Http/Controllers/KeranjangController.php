@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Penjual;
+namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\Keranjang;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
-class ProdukController extends Controller
+class KeranjangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return view('penjual.produk');
+        $data = Keranjang::where('user_id', Auth::user()->id)->get();
+        return view('keranjang', ['data' => $data]);
     }
 
     /**
@@ -39,33 +38,20 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        Validator::make($request->all(), [
-            'name' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
-            'jenis' => 'required',
-            'deskripsi' => 'required',
-            'size' => 'required',
-            'group_a' => 'required',
-            'images' => 'required|file|size:2048'
-        ]);
-        $path = 'Produk'; 
-        $file = $request->file('images');
-        Storage::putFileAs($path, $file, $file->getClientOriginalName());
-        
-        Produk::create([
-            'user_id' => Auth::user()->id,
-            'nama' => $request->name,
-            'deskripsi' => $request->deskripsi,
-            'stok' => $request->stok,
-            'harga' => $request->harga,
-            'jenis' => $request->jenis,
-            'gambar' => $path . '/' . $file->getClientOriginalName(),
-            'ukuran' => json_encode($request->size),
-            'varian' => json_encode($request->group_a),
+        $data = Keranjang::create([
+            'id' => Str::uuid(),
+            'user_id' => $request->user_id,
+            'produk_id' => $request->produk_id,
+            'penjual_id' => $request->penjual_id,
+            'jumlah' => $request->jumlah,
+            'harga' => $request->harga * $request->jumlah,
+            'ukuran' => $request->size,
+            'varian' => $request->varian,
         ]);
 
-        return redirect('/penjual/produk');
+        if($data) {
+            return redirect('keranjang');
+        }
     }
 
     /**
@@ -76,8 +62,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $data = Produk::where('id', $id)->first();
-        return view('detailProduct', ['data'=>$data]);
+        //
     }
 
     /**
@@ -111,6 +96,7 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Keranjang::where('id', $id)->delete();
+        return redirect('/keranjang');
     }
 }

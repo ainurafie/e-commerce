@@ -138,13 +138,6 @@
                 <h1 class="text-2xl font-montserrat font-semibold">Paling banyak dikunjungi</h1>
                 <div class="grid grid-cols-4 gap-y-5 mt-7">
                     <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
-                    <livewire:card.produck.index />
                 </div>
             </div>
 

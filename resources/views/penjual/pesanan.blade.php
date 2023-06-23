@@ -43,15 +43,15 @@
             <div class="flex gap-7 mb-9">
                 <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
                     <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Produk  Dipesan</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">54 produk</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $data->count() }} Produk</h1>
                 </div>
                 <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
                     <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Pesanan COD</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">54 produk</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $cod }} Produk</h1>
                 </div>
                 <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
                     <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Pesanan Transfer</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">54 produk</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $bca }} Produk</h1>
                 </div>
             </div>
             <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">
@@ -82,61 +82,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b">
+                        @foreach ($data as $d)
+                            <tr class="bg-white border-b"> 
+                                @php
+                                    $user = App\Models\User::where('id', $d->user_id)->first();
+                                    $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                                @endphp
                             <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
+                               
+                                {{ $user->name }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                <button data-modal-toggle="pesanan-penjual">
-                                    Manik Manik Imut
-
+                                <a href="{{ route('pesanan.show', $d->id) }}">
+                                <button >
+                                    {{ $produk->nama }}
                                 </button>
+                                </a>
                             </td>
                             <td class="px-6 py-4 truncate">
-                                08121287398823
+                                {{ $d->no }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                13 April 2023
+                               {{$d->created_at}}
                             </td>
                             <td class="px-6 py-4">
-                                2
+                                {{ $d->jumlah }}
                             </td>
                             <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
+                                {{ $d->alamat }}
                             </td>
                             <td class="px-6 py-4">
-                                COD
+                                {{ $d->metode_pembayaran }}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b">
-                            <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                <button data-modal-toggle="pesanan-penjual">
-                                    Manik Manik Imut
-
-                                </button>
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                08121287398823
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                13 April 2023
-                            </td>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                            </td>
-                            <td class="px-6 py-4">
-                                Transfer
-                            </td>
-                        </tr>
-
+                        {{-- <livewire:modal.pesanan-penjual :index="$d->id"/> --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -146,7 +126,6 @@
     <div class="mt-80">
         <livewire:footer.index />
     </div>
-    <livewire:modal.pesanan-penjual />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 

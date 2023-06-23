@@ -1,6 +1,6 @@
 @foreach ($data as $d)
     <div class="w-[278px] rounded overflow-hidden shadow-lg">
-        <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]"><img class="w-full" src="{{ Storage::url($d->gambar) }}" alt="Gambar gagal load"></a>
+        <a href="/detail-product/{{ $d->id }}" class="relative hover:brightness-75 mb-[14px]"><img class="w-full" src="{{ Storage::url($d->gambar) }}" alt="Gambar gagal load"></a>
         <div class="px-6 py-4">
             <div class="font-bold text-lg font-montserrat mb-2 line-clamp-1">
             <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]">   

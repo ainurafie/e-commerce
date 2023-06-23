@@ -7,42 +7,43 @@
             <div class="">
                 <div class="">
                     <div class="flex gap-24 mb-8">
+                        @php
+                            $user = App\Models\User::where('id', $data->user_id)->first();
+                            $produk = App\Models\Produk::where('id', $data->produk_id)->first();
+                        @endphp
                         <div class="">
                             <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Pemesan</h1>
-                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">Jennie Rubby Jane</h1>
+                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">{{ $user->name }}</h1>
                         </div>
                         <div class="">
                             <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Tanggal Pembelian</h1>
-                            <h1 class="text-xs text-[#919191] font-montserrat">13 April 2023</h1>
+                            <h1 class="text-xs text-[#919191] font-montserrat">{{ $data->created_at }}</h1>
                         </div>
                     </div>
                     <div class="flex gap-24 mb-8">
                         <div class="">
                             <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Nama Produk</h1>
-                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">Jennie Rubby Jane</h1>
+                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">{{ $produk->nama }}</h1>
                         </div>
                         <div class="">
                             <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Transaksi</h1>
-                            <h1 class="text-xs text-[#919191] font-montserrat ">COD</h1>
+                            <h1 class="text-xs text-[#919191] font-montserrat ">{{ $data->metode_pembayaran }}</h1>
                         </div>
                     </div>
                     <div class="flex gap-24 mb-8">
                         <div class="">
                             <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Jumlah Pembelian</h1>
-                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">2 produk</h1>
+                            <h1 class="text-xs text-[#919191] font-montserrat mb-2">{{ $data->jumlah }}</h1>
                         </div>
                         <div>
-
                         </div>
                     </div>
                     <div class="mb-7">
                         <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Alamat Pengantaran</h1>
-                        <h1 class="text-xs text-[#919191] font-montserrat mb-2">Komplek PJKA 386-388, JL. Jend.
-                            Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec. Purwokerto Tim., Kabupaten Banyumas,
-                            Jawa Tengah 53115</h1>
+                        <h1 class="text-xs text-[#919191] font-montserrat mb-2">{{$data->alamat}}</h1>
                     </div>
                     <div class="flex gap-3 items-center mb-7">
-                        <input type="checkbox" id="pengantaranSelesai" name="selected[]"
+                        <input type="checkbox" id="pengantaranSelesai" name="status_pengiriman"
                             class="form-checkbox h-5 w-5 text-[#BA2B60] rounded">
                         <label for="pengantaranSelesai"
                             class="cursor-pointer text-xs font-medium text-[#919191]">Pengantaran Selesai</label>
@@ -55,7 +56,7 @@
                                 <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
                                     alt="">
                             </span>
-                            <input class="hidden" type="file" name="images" id="image"
+                            <input class="hidden" type="file" name="bukti_pengiriman" id="image"
                                 onchange="previewImage()">
                         </label>
                     </div>

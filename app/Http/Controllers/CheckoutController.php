@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Penjual;
+namespace App\Http\Controllers;
 
+use App\Models\Checkout;
 use App\Models\Produk;
+use App\Models\Keranjang;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class ProdukController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +19,7 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return view('penjual.produk');
+        // return view('beli-produk')
     }
 
     /**
@@ -40,32 +41,39 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         Validator::make($request->all(), [
-            'name' => 'required',
-            'stok' => 'required',
+            'produk_id' => 'required',
+            'penjual_id' => 'required',
+            'jumlah' => 'required',
             'harga' => 'required',
-            'jenis' => 'required',
-            'deskripsi' => 'required',
-            'size' => 'required',
-            'group_a' => 'required',
-            'images' => 'required|file|size:2048'
+            'ukuran' => 'required',
+            'varian' => 'required',
+            'metode_pembayaran' => 'required',
+            'bukti_pembayaran' => 'required|file|size:2048'
         ]);
-        $path = 'Produk'; 
-        $file = $request->file('images');
-        Storage::putFileAs($path, $file, $file->getClientOriginalName());
-        
-        Produk::create([
+        if($request->file('bukti_pembayaran')) {
+            $path = 'Bukti_pembayaran'; 
+            $file = $request->file('bukti_pembayaran');
+            Storage::putFileAs($path, $file, $file->getClientOriginalName());
+        }
+        $penjual_id = Produk::where('id', $request->produk_id)->first();
+        Checkout::create([
             'user_id' => Auth::user()->id,
-            'nama' => $request->name,
-            'deskripsi' => $request->deskripsi,
-            'stok' => $request->stok,
+            'produk_id' => $request->produk_id,
+            'penjual_id' => $penjual_id->user_id,
+            'jumlah' => $request->jumlah,
             'harga' => $request->harga,
-            'jenis' => $request->jenis,
-            'gambar' => $path . '/' . $file->getClientOriginalName(),
-            'ukuran' => json_encode($request->size),
-            'varian' => json_encode($request->group_a),
+            'ukuran' => $request->ukuran,   
+            'varian' => $request->varian,
+            'no' => '09123456789',
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'bukti_pembayaran' => ($request->file('bukti_pembayaran')) ? $path . '/' . $file->getClientOriginalName() : '',
+            'alamat' => 'Tegal',
         ]);
 
-        return redirect('/penjual/produk');
+        if($request->keranjang) {
+            Keranjang::where('id', $request->keranjang)->delete();
+        }
+        return redirect('/');
     }
 
     /**
@@ -76,8 +84,12 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $data = Produk::where('id', $id)->first();
-        return view('detailProduct', ['data'=>$data]);
+        $data = Keranjang::where('id', $id)->first();
+        $produk = Produk::where('id', $data->produk_id)->first();
+        return view('beli-produk', [
+            'data' => $data,
+            'produk' => $produk
+        ]);
     }
 
     /**

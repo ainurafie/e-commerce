@@ -10,6 +10,10 @@ class Index extends Component
 {
     public function render()
     {
+        if(Auth::user() == NULL) {
+            $data = Produk::all();
+            return view('livewire.card.produck.index', ['data'=>$data]);
+        }
         if(Auth::user()->role == 'penjual') {
             $data = Produk::where('user_id', Auth::user()->id)->get();
             return view('livewire.card.produck.index', ['data'=>$data]);
