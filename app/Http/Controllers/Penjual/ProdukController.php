@@ -18,6 +18,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         return view('penjual.produk');
     }
 
@@ -39,6 +42,9 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         Validator::make($request->all(), [
             'name' => 'required',
             'stok' => 'required',
@@ -76,6 +82,9 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $data = Produk::where('id', $id)->first();
         return view('detailProduct', ['data'=>$data]);
     }

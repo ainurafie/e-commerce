@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Models\Checkout;
 use App\Models\Keranjang;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -9,10 +11,10 @@ use App\Http\Controllers\profileController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\PesananAdminController;
+use App\Http\Controllers\Penjual\ProdukController;
 use App\Http\Controllers\Penjual\penjualanController;
 use App\Http\Controllers\Penjual\PesananPenjualContoller;
-use App\Http\Controllers\Penjual\ProdukController;
-use App\Models\Checkout;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,47 +27,64 @@ use App\Models\Checkout;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.store');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/detail-product/{id}', [ProdukController::class, 'show']);
-
-Route::get('/detail-toko', function () {
-    return view('detailToko');
+Route::middleware('auth')->group(function() {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/detail-product/{id}', [ProdukController::class, 'show']);
+    
+    Route::get('/detail-toko', function () {
+        return view('detailToko');
+    });
+    Route::resource('/beli-produk', CheckoutController::class);
+    Route::get('/wedding-organizer', function () {
+        return view('weddingOrganizer');
+    });
+    Route::get('/makanan-minuman', function () {
+        return view('makananMinuman');
+    });
+    Route::get('/fashion', function () {
+        return view('fashionKategori');
+    });
+    Route::resource('/profile-user', profileController::class);
+    
+    Route::get('/pertanian-kategori', function () {
+        return view('pertanianKategori');
+    });
+    
+    Route::resource('/keranjang', KeranjangController::class);
 });
-Route::resource('/beli-produk', CheckoutController::class);
-Route::get('/wedding-organizer', function () {
-    return view('weddingOrganizer');
-});
-Route::get('/makanan-minuman', function () {
-    return view('makananMinuman');
-});
-Route::get('/fashion', function () {
-    return view('fashionKategori');
-});
-Route::resource('/profile-user', profileController::class);
-
-Route::get('/pertanian-kategori', function () {
-    return view('pertanianKategori');
-});
-
-Route::resource('/keranjang', KeranjangController::class);
 
 Route::prefix('/super-admin')->middleware('auth')->group(function() {
     Route::get('/', function () {
-        return view('superadmin.index');
+        $penjual = User::where('role', 'penjual')->count();
+        $pembeli = User::where('role', 'pembeli')->count();
+        $selesai = Checkout::where('status_pemesanan', 'Selesai')->count();
+        $belumSelesai = Checkout::where('status_pemesanan', NULL)->count();
+        if(Auth::user()->role == "admin") {
+            return view('superadmin.index', [
+                'penjual' => $penjual,
+                'pembeli' => $pembeli,
+                'selesai' => $selesai,
+                'belumSelesai' => $belumSelesai
+            ]);
+        }else {
+            return view("403");
+        }
     });
-    Route::get('/pesanan', function () {
-        return view('superadmin.pesanan');
-    });
+    Route::resource('/pesananAdmin', PesananAdminController::class);
     Route::get('/laporan', function () {
-        return view('superadmin.laporan');
+        if(Auth::user()->role == "admin") {
+            return view('superadmin.laporan');
+        }else {
+            return view("403");
+        }
     });
 });
 
@@ -73,6 +92,9 @@ Route::prefix('/super-admin')->middleware('auth')->group(function() {
 // Routing penjual 
 Route::prefix('penjual')->middleware('auth')->group(function() {
     Route::get('/', function () {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
             $query->where('status_pengiriman', NULL);
         })->get();
@@ -91,6 +113,9 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
         ]);
     });
     Route::get('/keranjang', function () {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $data = Keranjang::where('penjual_id', Auth::user()->id)->get();
         return view('penjual.keranjang', ['data'=>$data]);
     });
@@ -98,6 +123,9 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
     
     Route::resource('penjualan', penjualanController::class);
     Route::get('/ulasan', function () {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         return view('penjual.ulasan');
     });
     

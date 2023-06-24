@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Penjual;
+namespace App\Http\Controllers;
 
 use App\Models\Checkout;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class penjualanController extends Controller
+class PesananAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +15,11 @@ class penjualanController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role != "penjual") {
-            return view("403");
+        if(Auth::user()->role != "admin") {
+            return view(403);
         }
-        $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
-        })->get();
-        $user = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
-        })->distinct()->get('user_id')->count();
-        return view('penjual.penjualan', ['data'=>$data, 'user'=>$user]);
+        $data = Checkout::where('status_pengiriman', "Terkirim")->orderBy('created_at', 'DESC')->get();
+        return view('superadmin.pesanan', ['data'=>$data]);
     }
 
     /**
@@ -57,7 +51,11 @@ class penjualanController extends Controller
      */
     public function show($id)
     {
-        //
+        if(Auth::user()->role != "admin") {
+            return view(403);
+        }
+        $data = Checkout::findOrFail($id);
+        return view('superadmin.pesanan-selesai', ['data'=>$data]);
     }
 
     /**
@@ -80,7 +78,14 @@ class penjualanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(Auth::user()->role != "admin") {
+            return view(403);
+        }
+        $data = [
+            'status_pemesanan' => $request->status_pemesanan,
+        ];
+        Checkout::where('id', $id)->update($data);
+        return redirect('super-admin/pesananAdmin');
     }
 
     /**

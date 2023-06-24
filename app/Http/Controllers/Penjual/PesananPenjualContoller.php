@@ -18,6 +18,9 @@ class PesananPenjualContoller extends Controller
      */
     public function index()
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
             $query->where('status_pengiriman', NULL);
         })->get();
@@ -65,6 +68,9 @@ class PesananPenjualContoller extends Controller
      */
     public function show($id)
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $data = Checkout::where('id', $id)->first();
         return view('penjual.pesanan-penjual', ['data'=>$data]);
     }
@@ -89,6 +95,9 @@ class PesananPenjualContoller extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
         $path = 'Bukti_Pengiriman'; 
         $file = $request->file('bukti_pengiriman');
         Storage::putFileAs($path, $file, $file->getClientOriginalName());
