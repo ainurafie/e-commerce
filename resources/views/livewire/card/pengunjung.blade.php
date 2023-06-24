@@ -46,8 +46,8 @@
             </defs>
         </svg>
         <div class="">
-            <h1 class="text-[#7D8E7C] font-montserrat font-medium text-sm">Jumlah Pengunjung</h1>
-            <h1 class="text-black font-montserrat font-semibold text-xl">25 orang</h1>
+            <h1 class="text-[#7D8E7C] font-montserrat font-medium text-sm">Jumlah Customer</h1>
+            <h1 class="text-black font-montserrat font-semibold text-xl">{{ $user }} orang</h1>
         </div>
     </div>
 </div>

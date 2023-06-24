@@ -87,7 +87,7 @@
 
                             <div class="">
                                 <h1 class="text-[#CDCDCD] font-montserrat text-xs">Produk Terjual</h1>
-                                <h1 class="text-black font-montserrat font-medium text-lg">54 produk</h1>
+                                <h1 class="text-black font-montserrat font-medium text-lg">{{ $data->count() }} Produk</h1>
                             </div>
                         </div>
                         <div class="flex gap-6 items-center border-l border-r px-[30px] border-[#1A5427]">
@@ -135,7 +135,7 @@
                             <div class="">
                                 <h1 class="text-[#CDCDCD] font-montserrat text-xs">Penjualan bulan ini</h1>
                                 <div class="flex gap-1 items-center">
-                                    <h1 class="text-black font-montserrat font-medium text-lg">Rp 540.000</h1>
+                                    <h1 class="text-black font-montserrat font-medium text-lg">Rp. {{ number_format($data->sum('harga'), 0) }}</h1>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -149,7 +149,6 @@
                                             </linearGradient>
                                         </defs>
                                     </svg>
-
                                 </div>
                             </div>
                         </div>
@@ -197,7 +196,7 @@
 
                             <div class="">
                                 <h1 class="text-[#CDCDCD] font-montserrat text-xs">Jumlah Konsumen</h1>
-                                <h1 class="text-black font-montserrat font-medium text-lg">54 orang</h1>
+                                <h1 class="text-black font-montserrat font-medium text-lg">{{ $user }}</h1>
                             </div>
                         </div>
                     </div>
@@ -215,6 +214,9 @@
                                 Produk
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
+                                No telp
+                            </th>
+                            <th scope="col" class="px-6 py-3 truncate">
                                 tanggal
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -229,49 +231,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b">
+                        @foreach ($data as $d)
+                            <tr class="bg-white border-b"> 
+                                @php
+                                    $user = App\Models\User::where('id', $d->user_id)->first();
+                                    $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                                @endphp
                             <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
+                               
+                                {{ $user->name }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
+                                <a href="{{ route('pesanan.show', $d->id) }}">
+                                <button >
+                                    {{ $produk->nama }}
+                                </button>
+                                </a>
                             </td>
                             <td class="px-6 py-4 truncate">
-                                13 April 2023
+                                {{ $d->no }}
+                            </td>
+                            <td class="px-6 py-4 truncate">
+                               {{$d->created_at}}
                             </td>
                             <td class="px-6 py-4">
-                                2
+                                {{ $d->jumlah }}
                             </td>
                             <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
+                                {{ $d->alamat }}
                             </td>
                             <td class="px-6 py-4">
-                                COD
+                                {{ $d->metode_pembayaran }}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b">
-                            <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                13 April 2023
-                            </td>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                                Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                            </td>
-                            <td class="px-6 py-4">
-                                Transfer
-                            </td>
-                        </tr>
-
+                        {{-- <livewire:modal.pesanan-penjual :index="$d->id"/> --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

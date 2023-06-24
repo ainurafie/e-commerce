@@ -17,8 +17,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
-    <div class="mt-28">
+    <div class="">
         <div class="bg-[#F3FFF2] py-32">
             <div class="flex gap-16 justify-center">
                 <img src="../assets/images/register.svg" alt="" class="h-[412px]">
@@ -55,7 +54,7 @@
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                                 Password
                             </h1>
-                            <input type="text" id="password" name="password"
+                            <input type="password" id="password" name="password"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                         </div>
@@ -80,7 +79,6 @@
         </div>
 
     </div>
-    <livewire:footer.index />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
     <script>

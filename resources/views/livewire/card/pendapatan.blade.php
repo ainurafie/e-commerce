@@ -22,7 +22,7 @@
         </svg>
         <div class="">
             <h1 class="text-[#7D8E7C] font-montserrat font-medium text-sm">Pendapatan</h1>
-            <h1 class="text-black font-montserrat font-semibold text-xl">Rp 4.320.000</h1>
+            <h1 class="text-black font-montserrat font-semibold text-xl">Rp {{ number_format($data->sum('harga'), 0) }}</h1>
         </div>
     </div>
 </div>

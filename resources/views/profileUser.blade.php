@@ -15,7 +15,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <title>UMKM Banyumasan</title>
     @vite('resources/css/app.css')
-
 </head>
 
 <body>
@@ -47,29 +46,27 @@
                                             Nama
                                         </td>
                                         <td class="px-6 py-4 ">
-                                            Hersa Dwi Ikhsanti</td>
+                                            {{ Auth::user()->name }}</td>
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
                                             Tanggal Lahir
                                         </td>
                                         <td class="px-6 py-4 ">
-                                            10 Agustus 2000</td>
+                                            {{ Auth::user()->ttl }}</td>
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
                                             Jenis Kelamin
                                         </td>
                                         <td class="px-6 py-4 ">
-                                            Perempuan</td>
+                                            {{ Auth::user()->kelamin }}</td>
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
                                             Alamat
                                         </td>
-                                        <td class="px-6 py-4 ">
-                                            Alun-Alun, Regol Wetan, Kec. Sumedang Sel., Kabupaten Sumedang, Jawa Barat
-                                            45311</td>
+                                        <td class="px-6 py-4 ">{{ Auth::user()->alamat }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -85,21 +82,21 @@
                                             Username
                                         </td>
                                         <td class="px-6 py-4 truncate">
-                                            @hersadwi</td>
+                                            {{ Auth::user()->username }}</td>
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
                                             Email
                                         </td>
                                         <td class="px-6 py-4 truncate">
-                                            hersadwiikhsanti@email.com</td>
+                                            {{ Auth::user()->email }}</td>
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
-                                            Password
+                                            Email
                                         </td>
                                         <td class="px-6 py-4 truncate">
-                                            ******</td>
+                                            {{ Auth::user()->role }}</td>
                                     </tr>
                                 </tbody>
                             </table>

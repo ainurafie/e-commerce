@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Penjual;
 
-use App\Models\Produk;
+use App\Models\Checkout;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
-class ProdukController extends Controller
+class penjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +19,13 @@ class ProdukController extends Controller
         if(Auth::user()->role != "penjual") {
             return view("403");
         }
-        return view('penjual.produk');
+        $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
+            $query->where('status_pengiriman', 'Terkirim');
+        })->get();
+        $user = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
+            $query->where('status_pengiriman', 'Terkirim');
+        })->distinct()->get('user_id')->count();
+        return view('penjual.penjualan', ['data'=>$data, 'user'=>$user]);
     }
 
     /**
@@ -42,36 +46,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::user()->role != "penjual") {
-            return view("403");
-        }
-        Validator::make($request->all(), [
-            'name' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
-            'jenis' => 'required',
-            'deskripsi' => 'required',
-            'size' => 'required',
-            'group_a' => 'required',
-            'images' => 'required|file|size:2048'
-        ]);
-        $path = 'Produk'; 
-        $file = $request->file('images');
-        Storage::putFileAs($path, $file, $file->getClientOriginalName());
-        
-        Produk::create([
-            'user_id' => Auth::user()->id,
-            'nama' => $request->name,
-            'deskripsi' => $request->deskripsi,
-            'stok' => $request->stok,
-            'harga' => $request->harga,
-            'jenis' => $request->jenis,
-            'gambar' => $path . '/' . $file->getClientOriginalName(),
-            'ukuran' => json_encode($request->size),
-            'varian' => json_encode($request->group_a),
-        ]);
-
-        return redirect('/penjual/produk');
+        //
     }
 
     /**
@@ -82,11 +57,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        if(Auth::user()->role != "penjual") {
-            return view("403");
-        }
-        $data = Produk::where('id', $id)->first();
-        return view('detailProduct', ['data'=>$data]);
+        //
     }
 
     /**

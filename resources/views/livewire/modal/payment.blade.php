@@ -19,11 +19,13 @@
                     </button>
                 </div>
                 <div class="relative my-5">
+                    {{-- <input type="text" name="metode_pembayaran" value="{{ $payment }}" hidden> --}}
+                    
                     <h1 class="text-xs text-black font-montserrat font-medium mb-2">Unggah Bukti Pembayaran</h1>
-                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none" id="file_input" type="file">
+                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none" id="file_input" type="file" name="bukti_pembayaran">
                 </div>
                 <div class="flex justify-center">
-                    <button
+                    <button type="submit"
                         class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Submit</button>
                 </div>
             </div>

@@ -35,6 +35,8 @@
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
                 <div class="border-b border-[#CDCDCD]">
                     <h1 class="text-sm font-montserrat font-medium text-[#7D8E7C] mb-5">Grafik Pengguna</h1>
+                    <input type="text" name="penjual" id="penjual" value="{{ $penjual }}" hidden>
+                    <input type="text" name="pembeli" id="pembeli" value="{{ $pembeli }}" hidden>
                 </div>
                 <canvas id="chart1" class=></canvas>
                 <div class="flex justify-end">
@@ -44,6 +46,8 @@
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
                 <div class="border-b border-[#CDCDCD]">
                     <h1 class="text-sm font-montserrat font-medium text-[#7D8E7C] mb-5">Grafik Pesanan</h1>
+                    <input type="text" name="selesai" id="selesai" value="{{ $selesai }}" hidden>
+                    <input type="text" name="belumSelesai" id="belumSelesai" value="{{ $belumSelesai }}" hidden>
                 </div>
                 <canvas id="chart2" class=></canvas>
                 <div class="flex justify-end">

@@ -73,27 +73,30 @@
                 <h1 class="text-sm text-black font-montserrat font-medium m-[14px]">Ukuran
                 </h1>
                 <div class="flex gap-[14px] ">
-                    <input type="radio" class="radio-input" name="size" id="size-s" value="S">
+                    <input type="checkbox" class="radio-input" name="size[]" id="size-s" value="S">
                     <label for="size-s" class="radio-label">S</label>
 
-                    <input type="radio" class="radio-input" name="size" id="size-m" value="M">
+                    <input type="checkbox" class="radio-input" name="size[]" id="size-m" value="M">
                     <label for="size-m" class="radio-label">M</label>
 
-                    <input type="radio" class="radio-input" name="size" id="size-l" value="L">
+                    <input type="checkbox" class="radio-input" name="size[]" id="size-l" value="L">
                     <label for="size-l" class="radio-label">L</label>
 
-                    <input type="radio" class="radio-input" name="size" id="size-xl" value="XL">
+                    <input type="checkbox" class="radio-input" name="size[]" id="size-xl" value="XL">
                     <label for="size-xl" class="radio-label">XL</label>
+
+                    <input type="checkbox" class="radio-input" name="size[]" id="size-xxl" value="XXL">
+                    <label for="size-xxl" class="radio-label">XXL</label>
                 </div>
             </div>
             <h1 class="text-sm text-black font-montserrat font-medium">Varian Produk
             </h1>
-            <div class="mb-6 repeater" id="group_a">
+            <div class="mb-6 repeater" name="group_a">
                 <div data-repeater-list="group_a">
                     <div data-repeater-item="" class="flex flex-row gap-4">
-                        <input type="text" id="" name="" value=""
+                        <input type="text" id="" name="group_a" value=""
                             class="bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-34 mt-6"
-                            placeholder="Tambahkan Hastag" required>
+                            placeholder="Tambahkan Hastag">
                         <button type="button" class="text-black rounded-lg mt-6" data-repeater-delete>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

@@ -76,23 +76,16 @@
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="mb-[14px] grid grid-cols-12 gap-10 items-center">
             <div class="col-span-8">
-                <img class="h-[512px] w-full rounded-2xl" src="../assets/images/product.svg" alt=""
+                <img class="h-[512px] w-full rounded-2xl" src="{{ Storage::url($data->gambar) }}" alt=""
                     style="border-radius: 24px;">
             </div>
-            <div class="col-span-4 space-y-[18px] ml-[px]">
+            {{-- <div class="col-span-4 space-y-[18px] ml-[px]">
                 <img class="rounded-xl w-full" src="../assets/images/product.svg" alt="">
                 <img class="rounded-xl w-full" src="../assets/images/produx.png" alt="">
-            </div>
+            </div> --}}
         </div>
-        <h1 class="text-xl font-montserrat font-semibold mb-[14px]">Deskripsi</h1>
-        <h1 class="text-sm font-montserrat text-[#1E1E1E] mb-[14px]">Lorem ipsum dolor sit amet consectetur. Amet mauris
-            ultrices dignissim viverra purus. Eu ut tincidunt mollis non at nec ultrices pellentesque aenean. Elementum
-            scelerisque in egestas etiam cras mus commodo. Facilisi aliquet orci dolor ultricies urna velit. Risus urna
-            turpis nec massa eget in tellus. Turpis risus duis quis egestas facilisis duis ultrices lorem nam. Bibendum
-            ut sed sagittis nisi massa dui proin vestibulum. Nullam pharetra ultrices tellus est magna donec elementum
-            etiam. Lectus diam aliquet sodales gravida erat sit sem ipsum. Eget morbi imperdiet id tellus bibendum velit
-            lobortis quis non. Diam tristique ultricies aliquam metus sem eget. Pulvinar quis at dui dignissim lectus
-            fermentum semper. Pulvinar et lacus cras elit consectetur interdum euismod amet.</h1>
+        <h1 class="text-xl font-montserrat font-semibold mb-[14px]">{{ $data->nama }}</h1>
+        <h1 class="text-sm font-montserrat text-[#1E1E1E] mb-[14px]">{{ $data->deskripsi }}</h1>
         <div class="flex gap-2 mb-[50px]">
             <h1 class="text-[10px] text-[#919191] font-montserrat font-semibold">Apakah produk ini ada masalah?</h1>
             <button data-modal-toggle="lapor" class="flex items-center gap-1">
@@ -122,7 +115,7 @@
         </div>
         <div class="grid grid-cols-12">
             <div class="col-span-6 ">
-                <div class="grid grid-cols-12 mb-6">
+                {{-- <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
                         <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
                     </div>
@@ -161,133 +154,8 @@
 
                         </div>
                     </div>
-                </div>
-                <div class="grid grid-cols-12 mb-6">
-                    <div class="col-span-1">
-                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
-                    </div>
-                    <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Marsha Lenathea Lamia</h1>
-                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam
-                            yang
-                            lalu</h1>
-                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
-                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
-                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
-                        <div class="flex gap-2 mb-4">
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-12 mb-6">
-                    <div class="col-span-1">
-                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
-                    </div>
-                    <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Kim Taehyung</h1>
-                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam
-                            yang
-                            lalu</h1>
-                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
-                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
-                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
-                        <div class="flex gap-2 mb-4">
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-12 mb-[38px]">
-                    <div class="col-span-1">
-                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
-                    </div>
-                    <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Hersa Dwi Ikhsanti</h1>
-                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam
-                            yang
-                            lalu</h1>
-                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
-                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
-                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
-                        <div class="flex gap-2 mb-4">
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <button class="bg-white font-montserrat font-semibold text-xs text-[#004E11]">Lihat semua
-                        ulasan</button>
-                </div>
+                </div> --}}
+                
             </div>
             <div class=" col-span-6 pl-16 ">
                 <div class="bg-[#FDFDFD] rounded flex w-full">
@@ -435,55 +303,91 @@
                                 </filter>
                             </defs>
                         </svg>
-
-
                     </div>
                     <div class="w-full pl-3">
-                        <h1 class="text-xl font-montserrat font-semibold">Manik Manik Imut</h1>
-                        <h1 class="text-sm font-montserrat font-semibold text-[#E7E7E7] mb-9">Rp 32.000</h1>
+                        <h1 class="text-xl font-montserrat font-semibold">{{ $data->nama }}</h1>
+                        <h1 class="text-sm font-montserrat font-semibold text-[#D5D5D5] mb-9">Rp {{ $data->harga }}</h1>
                         <div class="mb-12">
-                            <form action="">
+                            <form method="POST" action="{{ route('keranjang.store') }}">
+                                @csrf
                                 <input class="btn-counter p-2 cursor-pointer" type="button" value="-" />
                                 <input class="total-item text-center w-10 border-none" type="text"
-                                    value="1" />
+                                value="1" name="jumlah"/>
                                 <input class="btn-counter p-2 cursor-pointer" type="button" value="+" />
+                                <livewire:modal.ukuran :index="$data->id" />
                             </form>
                         </div>
                         <div class="">
                             <div class="flex gap-2 border-b w-max">
+                                @if ($data->ukuran != '' && $data->varian != '[{"group_a":null}]')
+                                <button data-modal-toggle="size"
+                                    class="mb-3 text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg  px-3">Pesan
+                                    Sekarang
+                                    </button>
+                                @else
                                 <a href="/beli-produk" class="relative hover:brightness-75 mb-3">
                                     <button
-                                        class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Pesan
-                                        Sekarang</button></a>
+                                    class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Pesan
+                                    Sekarang
+                                    </button>
+                                </a>
+                                @endif
                                 <button data-modal-toggle="size"
                                     class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
                                     Keranjang</button>
-                            </div>
-                            <div class="flex justify-center mt-2">
-                                <button data-modal-toggle="chat" class="flex gap-1 items-center">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8.00001 11C8.00001 10.7348 8.10537 10.4805 8.2929 10.2929C8.48044 10.1054 8.7348 10 9.00001 10H15C15.2652 10 15.5196 10.1054 15.7071 10.2929C15.8947 10.4805 16 10.7348 16 11C16 11.2653 15.8947 11.5196 15.7071 11.7071C15.5196 11.8947 15.2652 12 15 12H9.00001C8.7348 12 8.48044 11.8947 8.2929 11.7071C8.10537 11.5196 8.00001 11.2653 8.00001 11ZM9.00001 14C8.7348 14 8.48044 14.1054 8.2929 14.2929C8.10537 14.4805 8.00001 14.7348 8.00001 15C8.00001 15.2653 8.10537 15.5196 8.2929 15.7071C8.48044 15.8947 8.7348 16 9.00001 16H13C13.2652 16 13.5196 15.8947 13.7071 15.7071C13.8947 15.5196 14 15.2653 14 15C14 14.7348 13.8947 14.4805 13.7071 14.2929C13.5196 14.1054 13.2652 14 13 14H9.00001ZM2.00001 12C2.00051 9.80763 2.72149 7.67615 4.052 5.93363C5.3825 4.1911 7.24878 2.93411 9.36361 2.35611C11.4784 1.77811 13.7246 1.91112 15.7565 2.73469C17.7883 3.55826 19.4932 5.02673 20.6087 6.9141C21.7243 8.80148 22.1886 11.0032 21.9304 13.1803C21.6721 15.3574 20.7056 17.3894 19.1794 18.9634C17.6533 20.5374 15.6521 21.5662 13.484 21.8916C11.3159 22.2169 9.10093 21.8208 7.18001 20.764L3.29201 21.948C3.11859 22.0009 2.93408 22.0056 2.7582 21.9616C2.58232 21.9177 2.42169 21.8267 2.29351 21.6985C2.16532 21.5704 2.07439 21.4097 2.03044 21.2338C1.98649 21.058 1.99118 20.8735 2.04401 20.7L3.22801 16.806C2.41992 15.3332 1.99749 13.68 2.00001 12ZM12 4.00003C10.5799 3.99992 9.18533 4.37782 7.95957 5.09495C6.73381 5.81207 5.72103 6.84255 5.02527 8.08056C4.3295 9.31856 3.97582 10.7195 4.00055 12.1394C4.02529 13.5593 4.42755 14.947 5.16601 16.16C5.23932 16.2805 5.2863 16.4152 5.30388 16.5551C5.32146 16.6951 5.30924 16.8371 5.26801 16.972L4.50201 19.49L7.01601 18.724C7.15133 18.6828 7.29385 18.6708 7.43417 18.6887C7.57449 18.7066 7.70941 18.7541 7.83001 18.828C8.88437 19.4718 10.0735 19.8626 11.3041 19.9698C12.5348 20.0771 13.7736 19.8979 14.9234 19.4463C16.0733 18.9946 17.1029 18.2829 17.9316 17.3667C18.7603 16.4506 19.3656 15.355 19.7 14.1658C20.0344 12.9766 20.0889 11.7261 19.8592 10.5123C19.6295 9.29854 19.1218 8.15445 18.3759 7.16971C17.63 6.18497 16.6662 5.38635 15.56 4.83643C14.4539 4.2865 13.2353 4.00023 12 4.00003Z"
-                                            fill="#8D8B8B" />
-                                    </svg>
-                                    <h1 class="bg-white font-montserrat text-sm text-[#004E11]">Chat</h1>
-                                </button>
+                                </div>
                             </div>
                         </div>
 
+                                {{-- <div id="beli" tabindex="-1" aria-hidden="true"
+                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                                    <div  class="relative w-[389px] h-full md:h-auto">
+                                        <div class="relative rounded-lg flex px-[30px] py-8 shadow bg-white">
+                                            <input type="text" value="{{ $data->id }}" name="produk_id" hidden>
+                                            <input type="text" value="{{ Auth::user()->id }}" name="user_id" hidden>
+                                            <input type="text" value="{{ $data->harga }}" name="harga" hidden>
+                                            <div class="">
+                                                <h1 class="text-sm text-black font-montserrat font-medium mb-[14px]">Pilih Ukuran
+                                                </h1>
+                                                <div class="flex gap-[14px] mb-5 ">
+                                                    @foreach (json_decode($data->ukuran) as $uk)
+                                                    <input type="radio" class="radio-input2" name="size" id="size-{{ $uk }}"
+                                                        value="{{ $uk }}">
+                                                    <label for="size-{{ $uk }}" class="radio-label">{{ $uk }}</label>
+                                                    @endforeach
+                                                </div>
+                                                <h1 class="text-sm text-black font-montserrat font-medium mb-[14px]">Varian Produk
+                                                </h1>
+                                                <div class="flex gap-[14px] mb-10">
+                                                    @foreach (json_decode($data->varian) as $var)
+                                                    <input type="radio" class="radio-input2" name="varian" id="varian-{{ $var->group_a }}"
+                                                        value="{{ $var->group_a }}">
+                                                    <label for="varian-{{ $var->group_a }}" class="radio-label2">{{ $var->group_a }}</label>
+                                                    @endforeach
+                                                </div>
+                                                
+                                                <div class="flex justify-between">
+                                                    <button type="submit" data-modal-toggle="add-cart"
+                                                        class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3">Beli
+                                                        Sekarang</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="mt-20">
-        <livewire:footer.index />
-    </div>
-    <livewire:modal.tambah-keranjang />
-    <livewire:modal.ukuran />
+        <div class="mt-20">
+            <livewire:footer.index />
+        </div>
+        <livewire:modal.tambah-keranjang />
     <livewire:modal.laporkan />
     <livewire:modal.chat />
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
         var mainNav = document.getElementById("main-nav");
@@ -491,6 +395,13 @@
 
         function toggleMenu() {
             mainNav.classList.toggle('hidden');
+
+            // change the icon when the menu is shown/closed
+            toggleMenuIcon.classList.toggle('fa-bars');
+            toggleMenuIcon.classList.toggle('fa-times');
+        }
+        function toggleMenu2() {
+            mainNav.classList.toggle('hidden2');
 
             // change the icon when the menu is shown/closed
             toggleMenuIcon.classList.toggle('fa-bars');
@@ -526,7 +437,6 @@
                     // check if value is a number
                     newValue = isNaN(newValue) ? 1 : newValue;
                     totalItem.value = newValue;
-
                 });
             }
         }

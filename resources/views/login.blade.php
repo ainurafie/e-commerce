@@ -17,8 +17,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
-    <div class="mt-28">
+    <div class="">
         <div class="bg-[#F3FFF2] py-32">
             <div class="flex gap-16 justify-center">
                 <img src="../assets/images/login.svg" alt="" class="h-[412px]">
@@ -54,7 +53,6 @@
         </div>
 
     </div>
-    <livewire:footer.index />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
     <script>

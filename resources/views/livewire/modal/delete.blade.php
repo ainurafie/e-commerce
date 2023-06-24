@@ -21,8 +21,12 @@
                     <h1 class="text-sm text-black font-montserrat font-medium mb-5 text-center">Apakah anda yakin untuk menghapus produk ini dari keranjang?</h1>
                 </div>
                 <div class="flex justify-center gap-[14px]">
-                    <button
-                        class="text-[#004E11] font-montserrat font-semibold text-sm bg-[#D4EDDA] rounded-lg py-2 px-6">Ya</button>
+                    <form method="POST" action="{{ route('keranjang.destroy', $index)  }}" >
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="text-[#004E11] font-montserrat font-semibold text-sm bg-[#D4EDDA] rounded-lg py-2 px-6">Ya</button>
+                    </form>
                     <button data-modal-toggle="delete"
                         class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-4">Tidak</button>
                 </div>

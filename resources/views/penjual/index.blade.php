@@ -29,6 +29,8 @@
 
 <body>
     <livewire:sidebar.penjual />
+    <input type="text" name="cod" id="cod" value="{{ $cod }}" hidden>
+    <input type="text" name="bca" id="bca" value="{{ $bca }}" hidden>
     <div class="p-4 sm:ml-52">
 
         <div class="flex justify-end border-b px-12 py-5 mb-2 border-[#D4EDDA]">
@@ -128,41 +130,31 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data as $d)
+                        @php
+                            $user = App\Models\User::where('id', $d->user_id)->first();
+                            $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                        @endphp
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
+                                {{ $user->name }}
                             </td>
-                            <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
-                            </td>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
+                            <td>
+                            <a href="{{ route('pesanan.show', $d->id) }}">
+                                <button >{{ $produk->nama }} </button>
+                            </a>
                             </td>
                             <td class="px-6 py-4">
-                                COD
+                                {{ $d->jumlah }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $d->alamat }}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{ $d->metode_pembayaran }}
                             </td>
                         </tr>
-                        <tr class="bg-white border-b">
-                            <td class="px-6 py-4 truncate">
-                                Jennie Rubyjane
-                            </td>
-                            <td class="px-6 py-4 truncate">
-                                Manik Manik Imut
-                            </td>
-                            <td class="px-6 py-4">
-                                2
-                            </td>
-                            <td class="px-6 py-4">
-                                Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                            </td>
-                            <td class="px-6 py-4">
-                                Transfer
-                            </td>
-                        </tr>
-                       
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -175,17 +167,17 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script>
+        let cod = document.getElementById('cod');
+        let bca = document.getElementById('bca');
         // Data untuk grafik pie pertama
         var data1 = {
             labels: ['COD', 'Transfer'],
             datasets: [{
-                data: [30, 40],
+                data: [cod.value, bca.value],
                 backgroundColor: ['#F765A3', '#16BFD6']
             }]
         };
-
-
-
+        
         // Opsi global untuk legenda
         Chart.defaults.plugins.legend.position = 'right';
 

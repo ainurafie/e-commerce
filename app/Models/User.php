@@ -40,6 +40,6 @@ class User extends Authenticatable
     ];
 
     public function produks() {
-        return $this->belongsTo(Produk::class);
+        return $this->hasMany(Produk::class);
     }
 }

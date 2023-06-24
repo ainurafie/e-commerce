@@ -12,7 +12,6 @@
                     <img src="../assets/images/cart.svg" alt="">
                 </div>
                 <h1 class="text-sm text-black font-montserrat font-medium">Produk berhasil ditambahkan ke keranjang</h1>
-               
             </div>
         </div>
     </div>
