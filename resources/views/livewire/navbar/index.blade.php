@@ -4,7 +4,7 @@
         <!-- Logo -->
         <div>
             <a href="/" class="text-white text-2xl font-semibold italic">
-                KINDA<span class="text-amber-500">LOGO</span>
+            <img class="float-right ml-20" src="/assets/images/logo.svg" alt="user photo">
             </a>
         </div>
 
