@@ -18,7 +18,7 @@
 
 <body>
     <div class="">
-        <div class="bg-[#F3FFF2] py-32">
+        <div class="bg-[#2AA345] py-32">
             <div class="flex gap-16 justify-center">
                 <img src="../assets/images/login.svg" alt="" class="h-[412px]">
                 <div class="bg-white py-9 rounded-xl px-14 w-[480px]">
@@ -43,7 +43,7 @@
                                 required>
                         </div>
                         <div class="w-full">
-                            <button type="submit" class="p-[10px] text-white bg-[#004E11] font-semibold rounded-lg w-full mb-4">Masuk</button>
+                            <button type="submit" class="p-[10px] text-white bg-[#004E11] font-semibold rounded-lg w-full mb-4">Beli Sekarang</button>
                             <h1 class="text-xs font-montserrat text-[#000000] text-center">Belum punya akun?<a href="/register" class="text-xs font-montserrat text-[#004E11] "> Daftar disini</a></h1>
                         </div>
                     </div>
