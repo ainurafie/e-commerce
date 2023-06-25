@@ -14,9 +14,9 @@
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-[#2AA345] flex flex-col justify-between">
             <div class="">
-                <a href="https://flowbite.com/" class="flex items-center pl-2.5 mb-5">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-                    <span class="self-center text-xl font-semibold whitespace-nowrap">Flowbite</span>
+                <a href="/penjual" class="flex items-center pl-14 mb-5 w-full h-auto scale-[2] block mt-6">
+                    <img src="/assets/images/logo.svg" class="h-6 mr-3 sm:h-7" alt="Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap"></span>
                 </a>
                 <ul class="space-y-2 font-medium mt-10">
                     <li>
