@@ -25,14 +25,7 @@
             <div class="flex justify-center">
                 <div class="flex gap-5 justify-center">
                     <div class="relative">
-                        <label type="file" name="image-product" id="image-product" required>
-                            <span class="">
-                                <img class="img-preview w-32 h-32 border-2 rounded-full hover:bg-slate-200 cursor-pointer"
-                                    alt="">
-                            </span>
-                            <input class="hidden" type="file" name="images" id="image"
-                                onchange="previewImage()">
-                        </label>
+                        <img src="{{ Storage::url(Auth::user()->image) }}" class="w-32 h-32 rounded-full" alt="">
                     </div>
                     <div class="w-3/4">
                         <div class="py-4 bg-white shadow drop-shadow-lg rounded-[8px] mb-6">
@@ -43,7 +36,7 @@
                                 <tbody>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
-                                            Nama
+                                            Nama / Nama Toko
                                         </td>
                                         <td class="px-6 py-4 ">
                                             {{ Auth::user()->name }}</td>
@@ -101,6 +94,10 @@
                                 </tbody>
                             </table>
                         </div>
+                        <a href="/profile-setting">
+                            <button type="button"
+                    class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#2AA345] rounded-lg py-2.5 px-6">Edit Profile</button>
+                        </a>
                     </div>
                 </div>
             </div>

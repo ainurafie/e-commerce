@@ -23,8 +23,10 @@ return new class extends Migration
             $table->string('role');
             $table->string('ttl')->nullable();
             $table->string('kelamin')->nullable();
-            $table->string('Toko')->nullable();
+            $table->string('noHp')->nullable();
+            $table->string('toko')->nullable();
             $table->string('alamat')->nullable();
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

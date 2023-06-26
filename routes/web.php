@@ -15,6 +15,7 @@ use App\Http\Controllers\PesananAdminController;
 use App\Http\Controllers\Penjual\ProdukController;
 use App\Http\Controllers\Penjual\penjualanController;
 use App\Http\Controllers\Penjual\PesananPenjualContoller;
+use App\Http\Controllers\ProfileSettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,7 @@ Route::middleware('auth')->group(function() {
         return view('fashionKategori');
     });
     Route::resource('/profile-user', profileController::class);
+    Route::resource('/profile-setting', ProfileSettingController::class);
     
     Route::get('/pertanian-kategori', function () {
         return view('pertanianKategori');
