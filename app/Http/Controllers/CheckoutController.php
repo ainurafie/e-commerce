@@ -45,8 +45,6 @@ class CheckoutController extends Controller
             'penjual_id' => 'required',
             'jumlah' => 'required',
             'harga' => 'required',
-            'ukuran' => 'required',
-            'varian' => 'required',
             'metode_pembayaran' => 'required',
             'bukti_pembayaran' => 'required|file|size:2048'
         ]);
@@ -62,8 +60,8 @@ class CheckoutController extends Controller
             'penjual_id' => $penjual_id->user_id,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
-            'ukuran' => $request->ukuran,   
-            'varian' => $request->varian,
+            'ukuran' => ($request->ukuran) ? $request->ukuran : '',   
+            'varian' => ($request->varian) ? $request->varian : '',
             'no' => '09123456789',
             'metode_pembayaran' => $request->metode_pembayaran,
             'bukti_pembayaran' => ($request->file('bukti_pembayaran')) ? $path . '/' . $file->getClientOriginalName() : '',
@@ -82,13 +80,13 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $data = Keranjang::where('id', $id)->first();
-        $produk = Produk::where('id', $data->produk_id)->first();
+        $produk = Produk::where('id', $id)->first();
         return view('beli-produk', [
-            'data' => $data,
-            'produk' => $produk
+            'produk' => $produk,
+            'jumlah' => $request->jumlah,
+            'action' => 'beli',
         ]);
     }
 
@@ -100,7 +98,13 @@ class CheckoutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Keranjang::where('id', $id)->first();
+        $produk = Produk::where('id', $data->produk_id)->first();
+        return view('beli-produk', [
+            'data' => $data,
+            'produk' => $produk,
+            'action' => 'keranjang'
+        ]);
     }
 
     /**

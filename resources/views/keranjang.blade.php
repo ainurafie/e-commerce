@@ -65,7 +65,7 @@
                                         class="text-[#E7E7E7] me-3 font-montserrat font-semibold text-sm bg-[#CB3A26] rounded-lg py-2 px-3">
                                             Hapus
                                         </button>
-                                        <form method="POST" action="{{ route('beli-produk.show', $d->id) }}">
+                                        <form method="POST" action="{{ route('beli-produk.edit', $d->id) }}">
                                             @csrf
                                             @method('GET')
                                             <button type="submit"

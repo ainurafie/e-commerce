@@ -24,6 +24,13 @@
         .radio-input2 {
             display: none;
         }
+        .radio-input3 {
+            display: none;
+        }
+
+        .radio-input4 {
+            display: none;
+        }
 
         .content {
             display: none;
@@ -56,6 +63,32 @@
             color: #5A5A5A;
             cursor: pointer;
         }
+        .radio-label3 {
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #D4EDDA;
+            border-radius: 8px;
+            width: 53px;
+            height: 53px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5A5A5A;
+            cursor: pointer;
+        }
+
+        .radio-label4 {
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #D4EDDA;
+            border-radius: 8px;
+            padding: 17px 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5A5A5A;
+            cursor: pointer;
+        }
 
         /* Styling untuk label radio button yang dipilih */
         .radio-input:checked+.radio-label {
@@ -64,6 +97,15 @@
         }
 
         .radio-input2:checked+.radio-label2 {
+            background-color: #2AA345;
+            color: white;
+        }
+        .radio-input3:checked+.radio-label3 {
+            background-color: #2AA345;
+            color: white;
+        }
+
+        .radio-input4:checked+.radio-label4 {
             background-color: #2AA345;
             color: white;
         }
@@ -319,23 +361,44 @@
                         </div>
                         <div class="">
                             <div class="flex gap-2 border-b w-max">
-                                @if ($data->ukuran != '' && $data->varian != '[{"group_a":null}]')
-                                <button data-modal-toggle="size"
+                                @if ($data->ukuran != 'null' && $data->varian[0] != 'null')
+                                <livewire:modal.ukuran-beli :index="$data->id" />
+                                <button data-modal-toggle="sizeBeli"
                                     class="mb-3 text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg  px-3">Pesan
                                     Sekarang
                                     </button>
                                 @else
-                                <a href="/beli-produk" class="relative hover:brightness-75 mb-3">
+                                <form method="POST" action="{{ route('beli-produk.show', $data->id) }}" class="relative hover:brightness-75 mb-3">
+                                    @method("GET")
+                                    @csrf
+                                    <input class="total-item2 collapse text-center w-10 border-none" type="text"
+                                    value="1" name="jumlah" />
                                     <button
                                     class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-3">Pesan
                                     Sekarang
                                     </button>
-                                </a>
+                                </form>
                                 @endif
+                                @if ($data->ukuran != 'null' && $data->varian[0] != 'null')
                                 <button data-modal-toggle="size"
                                     class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
                                     Keranjang</button>
                                 </div>
+                                @else
+                                <form method="POST" action="{{ route('keranjang.store') }}">
+                                    @csrf
+                                    <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden> 
+                                    <input type="text" name="produk_id" value="{{ $data->id }}" hidden> 
+                                    <input type="text" name="penjual_id" value="{{ $data->user_id }}" hidden> 
+                                    <input type="text" name="harga" value="{{ $data->harga }}" hidden> 
+                                    <input class="total-item3 collapse text-center w-10 border-none" type="text"
+                                    value="1" name="jumlah" />
+                                    <button type="submit"
+                                        class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
+                                        Keranjang</button>
+                                    </div>
+                                </form>
+                                @endif
                             </div>
                         </div>
 
@@ -411,17 +474,14 @@
     <script>
         var btnCounter = document.querySelectorAll('.btn-counter');
         var totalItem = document.querySelector('.total-item');
-
+        var totalItem2 = document.querySelector('.total-item2');
+        var totalItem3 = document.querySelector('.total-item3');
+        var totalItem4 = document.querySelector('.total-item4');
 
         function countItems() {
-
             for (var i = 0; i < btnCounter.length; i++) {
-
                 btnCounter[i].addEventListener('click', function() {
                     var oldValue = totalItem.value;
-
-                    // console.log(_this);
-
                     if (this.value === '+') {
                         // let string convert to integer
                         var newValue = parseInt(oldValue, 10) + 1;
@@ -440,8 +500,70 @@
                 });
             }
         }
+        function countItems2() {
+            for (var i = 0; i < btnCounter.length; i++) {
+                btnCounter[i].addEventListener('click', function() {
+                    var oldValue2 = totalItem2.value;
+                    if (this.value === '+') {
+                        var newValue2 = parseInt(oldValue2, 10) + 1;
+                    } else {
+                        if (oldValue2 > 1) {
+                            var newValue2 = parseInt(oldValue2, 10) - 1;
+                        } else {
+                            newValue2 = 1;
+                        }
+                    }
 
+                    // check if value is a number
+                    newValue2 = isNaN(newValue2) ? 1 : newValue2;
+                    totalItem2.value = newValue2;
+                });
+            }
+        }
+        function countItems3() {
+            for (var i = 0; i < btnCounter.length; i++) {
+                btnCounter[i].addEventListener('click', function() {
+                    var oldValue3 = totalItem3.value;
+                    if (this.value === '+') {
+                        var newValue3 = parseInt(oldValue3, 10) + 1;
+                    } else {
+                        if (oldValue3 > 1) {
+                            var newValue3 = parseInt(oldValue3, 10) - 1;
+                        } else {
+                            newValue3 = 1;
+                        }
+                    }
+
+                    // check if value is a number
+                    newValue3 = isNaN(newValue3) ? 1 : newValue3;
+                    totalItem3.value = newValue3;
+                });
+            }
+        }
+        function countItems4() {
+            for (var i = 0; i < btnCounter.length; i++) {
+                btnCounter[i].addEventListener('click', function() {
+                    var oldValue4 = totalItem4.value;
+                    if (this.value === '+') {
+                        var newValue4 = parseInt(oldValue4, 10) + 1;
+                    } else {
+                        if (oldValue4 > 1) {
+                            var newValue4 = parseInt(oldValue4, 10) - 1;
+                        } else {
+                            newValue4 = 1;
+                        }
+                    }
+
+                    // check if value is a number
+                    newValue4 = isNaN(newValue4) ? 1 : newValue4;
+                    totalItem4.value = newValue4;
+                });
+            }
+        }
         countItems();
+        countItems2();
+        countItems3();
+        countItems4();
     </script>
 </body>
 

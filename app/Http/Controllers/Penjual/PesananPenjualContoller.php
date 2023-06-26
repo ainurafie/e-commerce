@@ -109,7 +109,7 @@ class PesananPenjualContoller extends Controller
 
         $update = Checkout::where('id', $id)->update($data);
         if($update) {
-            return 'berhasil';
+            return redirect('penjual/pesanan');
         }
     }
 

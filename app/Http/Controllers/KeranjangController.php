@@ -45,8 +45,8 @@ class KeranjangController extends Controller
             'penjual_id' => $request->penjual_id,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga * $request->jumlah,
-            'ukuran' => $request->size,
-            'varian' => $request->varian,
+            'ukuran' => ($request->size) ? $request->size : '',
+            'varian' => ($request->varian) ? $request->varian : '',
         ]);
 
         if($data) {

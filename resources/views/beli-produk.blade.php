@@ -24,6 +24,7 @@
 
         <h1 class="text-xl font-montserrat font-semibold mb-10 text-start">Detail Belanja</h1>
         <div class="border-b border-[#CDCDCD] mb-9">
+            @if ($action === 'keranjang')
             <div class="flex justify-between items-center mb-[14px]">
                 <h1 class="text-sm text-[#858585] font-montserrat font-medium">Nama Produk</h1>
                 <h1 class="text-sm text-black font-montserrat font-medium">{{ $produk->nama }}</h1>
@@ -36,6 +37,20 @@
                 <h1 class="text-sm text-[#858585] font-montserrat font-medium">Total Harga</h1>
                 <h1 class="text-sm text-black font-montserrat font-medium">{{ $data->harga }}</h1>
             </div>
+            @else
+            <div class="flex justify-between items-center mb-[14px]">
+                <h1 class="text-sm text-[#858585] font-montserrat font-medium">Nama Produk</h1>
+                <h1 class="text-sm text-black font-montserrat font-medium">{{ $produk->nama }}</h1>
+            </div>
+            <div class="flex justify-between items-center mb-[14px]">
+                <h1 class="text-sm text-[#858585] font-montserrat font-medium">Total Produk</h1>
+                <h1 class="text-sm text-black font-montserrat font-medium">{{ $jumlah }}</h1>
+            </div>
+            <div class="flex justify-between items-center mb-7">
+                <h1 class="text-sm text-[#858585] font-montserrat font-medium">Total Harga</h1>
+                <h1 class="text-sm text-black font-montserrat font-medium">{{ $produk->harga * $jumlah }}</h1>
+            </div>
+            @endif
         </div>
         <div class="">
             <div class="">
@@ -54,14 +69,22 @@
                     <div class="accordion-content hidden">
                             <form method="POST" action="{{ route('beli-produk.store') }}" enctype="multipart/form-data">
                             @csrf
-                            <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
-                            {{-- <input type="text" name="penjual_id" value="{{ $produk->id }}" hidden> --}}
-                            <input type="text" name="jumlah" value="{{ $data->jumlah }}" hidden>
-                            <input type="text" name="harga" value="{{ $data->harga }}" hidden>
-                            <input type="text" name="ukuran" value="{{ $data->ukuran }}" hidden>
-                            <input type="text" name="varian" value="{{ $data->varian }}" hidden>
-                            <input type="text" name="metode_pembayaran" value="BCA" hidden>
-                            <input type="text" name="keranjang" value="{{ $data->id }}" hidden>
+                            @if ($action === 'keranjang')
+                                <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
+                                <input type="text" name="jumlah" value="{{ $data->jumlah }}" hidden>
+                                <input type="text" name="harga" value="{{ $data->harga }}" hidden>
+                                <input type="text" name="ukuran" value="{{ $data->ukuran }}" hidden>
+                                <input type="text" name="varian" value="{{ $data->varian }}" hidden>
+                                <input type="text" name="metode_pembayaran" value="BCA" hidden>
+                                <input type="text" name="keranjang" value="{{ $data->id }}" hidden>
+                            @else
+                                <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
+                                <input type="text" name="jumlah" value="{{ $jumlah }}" hidden>
+                                <input type="text" name="harga" value="{{ $produk->harga * $jumlah }}" hidden>
+                                <input type="text" name="metode_pembayaran" value="BCA" hidden>
+                            @endif
+                            
+
                             <button type="button" data-modal-toggle="payment-modal" href="" class="w-full">
                                 <div class="flex gap-5 items-center px-8 py-4 bg-[#FAFAFA] shadow hover:bg-[#D4EDDA] rounded-lg mb-[10px]">
                                     <img src="../assets/images/bca.svg" alt=""> 
@@ -75,6 +98,7 @@
 
                 <form method="POST" action="{{ route('beli-produk.store') }}" enctype="multipart/form-data">
                     @csrf
+                    @if ($action === 'keranjang')
                     <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
                     <input type="text" name="jumlah" value="{{ $data->jumlah }}" hidden>
                     <input type="text" name="harga" value="{{ $data->harga }}" hidden>
@@ -82,6 +106,12 @@
                     <input type="text" name="varian" value="{{ $data->varian }}" hidden>
                     <input type="text" name="metode_pembayaran" value="COD" hidden>
                     <input type="text" name="keranjang" value="{{ $data->id }}" hidden>
+                @else
+                    <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
+                    <input type="text" name="jumlah" value="{{ $jumlah }}" hidden>
+                    <input type="text" name="harga" value="{{ $produk->harga * $jumlah }}" hidden>
+                    <input type="text" name="metode_pembayaran" value="COD" hidden>
+                @endif
                     <button type="submit" class="accordion-button w-full">
                         <div class="w-full flex gap-5 items-center px-8 py-4 bg-[#D4EDDA] rounded-lg mb-[10px]">
                             <img src="../assets/images/cod.svg" alt=""> 
