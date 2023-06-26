@@ -46,7 +46,7 @@
                 class="flex items-center text-monttserat font-regular text-gray-500 rounded-lg hover:text-grey-600  "
                 type="button">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-10 h-10 mr-2 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
+                <img class="w-10 h-10 mr-2 rounded-full" src="{{ Storage::url(Auth::user()->image) }}" alt="user photo">
                 {{ Auth::guest() ? 'Unknow' : Auth::user()->username }}
                 <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
                         <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                        <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
                     </li>
                     <li>
                 </ul>

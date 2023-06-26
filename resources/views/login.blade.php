@@ -28,7 +28,7 @@
                         <h1 class="text-sm font-montserrat text-[#0C0C0C] text-center font-semibold mb-3">Login</h1>
                         <div class="relative mb-5">
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
-                                Username
+                                E-mail
                             </h1>
                             <input type="text" id="email" name="email"
                                 class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
