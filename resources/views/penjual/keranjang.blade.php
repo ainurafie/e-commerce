@@ -40,9 +40,7 @@
         </div>
         <div class="">
             <h1 class="text-xl text-black font-montserrat font-semibold mt-2 mb-7">Keranjang</h1>
-            <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">
-                @foreach ($data as $d)
-                    
+            <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">    
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-gray-700 uppercase bg-[#ECFFEC]">
                         <tr>
@@ -67,6 +65,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data as $d)
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4 truncate">
                                 {{ $d->user_id }}
@@ -87,9 +86,10 @@
                                 {{$d->harga}}
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
-                @endforeach
+                
             </div>
         </div>
 

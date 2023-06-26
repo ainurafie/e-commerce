@@ -82,9 +82,9 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        if(Auth::user()->role != "penjual") {
-            return view("403");
-        }
+        // if(Auth::user()->role != "penjual") {
+        //     return view("403");
+        // }
         $data = Produk::where('id', $id)->first();
         return view('detailProduct', ['data'=>$data]);
     }

@@ -30,7 +30,7 @@
 <body>
     <livewire:sidebar.super-admin />
     <div class="p-4 sm:ml-64">
-        <h1 class="py-11 text-xs text-black font-montserrat font-semibold">Hallo, Superadmin</h1>
+        <h1 class="py-11 text-xs text-black font-montserrat font-semibold">Hallo, {{ Auth::user()->name }}</h1>
         <div class="flex flex-row gap-4">
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
                 <div class="border-b border-[#CDCDCD]">
