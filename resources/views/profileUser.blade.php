@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 mt-48">
         <h1 class="text-xl font-montserrat font-semibold px-6 mb-12">Profile</h1>
         <div class="bg-white rounded-xl py-[17px] px-6 ">
@@ -86,7 +86,7 @@
                                     </tr>
                                     <tr class="">
                                         <td class="px-6 py-4 truncate">
-                                            Email
+                                            Role
                                         </td>
                                         <td class="px-6 py-4 truncate">
                                             {{ Auth::user()->role }}</td>

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 mt-48 w-2/3 block mx-auto">
         <h1 class="text-xl font-montserrat font-semibold px-6 mb-12">Profile</h1>
         <div class="bg-white rounded-xl py-[17px] px-6 ">
@@ -59,9 +59,10 @@
                         <select name="gender"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
                         @if ($data->kelamin)
-                        <option value="{{ $data->kelamin }}">{{ $data->kelamin }}</option>
+                        <option value="{{ $data->kelamin }}" selected>{{ $data->kelamin }}</option>
+                        @else
+                        <option value=""selected>Pilih Gender</option>
                         @endif
-                        <option value="" selected>Pilih Gender</option>
                         <option value="laki-laki">Laki - Laki</option>
                         <option value="perempuan">Perempuan</option>
                     </select>

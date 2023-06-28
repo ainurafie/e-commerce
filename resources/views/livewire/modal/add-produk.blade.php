@@ -40,6 +40,10 @@
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
                         <option value="" selected>Pilih jenis produk</option>
                         <option value="fashion">Fashion</option>
+                        <option value="makananMinuman">Makanan Minuman</option>
+                        <option value="pertanian">Pertanian</option>
+                        <option value="weddingOrganizer">wedding Organizer</option>
+                        <option value="aksesoris">Aksesoris</option>
                     </select>
                 </div>
             </div>
@@ -65,10 +69,8 @@
                             </span>
                             <input class="hidden" type="file" name="images" onchange="previewImage(this)">
                         </label>
-                        <button class="delete-button" onclick="deleteRepeater(this)" class="mb-2">Delete</button>
                     </div>
                 </div>
-                <button onclick="addImageRepeater()">Add Image</button>
 
                 <h1 class="text-sm text-black font-montserrat font-medium m-[14px]">Ukuran
                 </h1>

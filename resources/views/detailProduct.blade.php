@@ -113,7 +113,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 mt-48">
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="mb-[14px] grid grid-cols-12 gap-10 items-center">
@@ -157,7 +157,7 @@
         </div>
         <div class="grid grid-cols-12">
             <div class="col-span-6 ">
-                {{-- <div class="grid grid-cols-12 mb-6">
+                <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
                         <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
                     </div>
@@ -196,7 +196,7 @@
 
                         </div>
                     </div>
-                </div> --}}
+                </div>
                 
             </div>
             <div class=" col-span-6 pl-16 ">

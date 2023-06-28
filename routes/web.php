@@ -16,6 +16,11 @@ use App\Http\Controllers\Penjual\ProdukController;
 use App\Http\Controllers\Penjual\penjualanController;
 use App\Http\Controllers\Penjual\PesananPenjualContoller;
 use App\Http\Controllers\ProfileSettingController;
+use App\Http\Controllers\UlasanController;
+use App\Models\Notifikasi;
+use App\Models\Produk;
+use App\Models\Ulasan;
+use GuzzleHttp\Psr7\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +39,13 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::middleware('auth')->group(function() {
+    Route::get('kategori/{kategori}', function($cat) {
+        return view($cat, [
+            'data'=>$cat,
+        ]);
+    });
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::resource('/ulasan', UlasanController::class);
     Route::get('/', function () {
         return view('welcome');
     });
@@ -108,10 +119,12 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
             $query->where('status_pengiriman', 'Terkirim');
             $query->where('metode_pembayaran', "BCA");
         })->count();
+        $produk = Produk::where('user_id', Auth::user()->id)->orderBy('terjual', 'DESC')->get();
         return view('penjual.index', [
             'data'=> $data,
             'bca'=> $bca,
-            'cod'=> $cod
+            'cod'=> $cod,
+            'produk' => $produk,
         ]);
     });
     Route::get('/keranjang', function () {

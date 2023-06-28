@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Penjual;
+namespace App\Http\Controllers;
 
-use App\Models\Produk;
-use App\Models\Checkout;
+use App\Models\Ulasan;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class penjualanController extends Controller
+class UlasanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,17 +15,7 @@ class penjualanController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role != "penjual") {
-            return view("403");
-        }
-        $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
-        })->get();
-        $user = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
-        })->distinct()->get('user_id')->count();
-        $terjual = Produk::where('user_id', Auth::user()->id)->get();
-        return view('penjual.penjualan', ['data'=>$data, 'user'=>$user, 'terjual'=>$terjual]);
+        //
     }
 
     /**
@@ -48,7 +36,13 @@ class penjualanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Ulasan::create([
+            'user_id' => Auth::user()->id,
+            'produk_id' => $request->produk_id,
+            'pesan' => $request->pesan,
+            'rating' => 5,
+        ]);
+        return redirect('/');
     }
 
     /**

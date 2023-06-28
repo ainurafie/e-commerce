@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Checkout;
+use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -84,7 +85,14 @@ class PesananAdminController extends Controller
         $data = [
             'status_pemesanan' => $request->status_pemesanan,
         ];
-        Checkout::where('id', $id)->update($data);
+        $checkout = Checkout::where('id', $id)->first();
+        $checkout->update($data);
+        
+        Notifikasi::create([
+            'user_id' => $checkout->user_id, 
+            'checkout_id' => $checkout->id,
+            'pesan' => 'Pesanan Anda Selesai',
+        ]);
         return redirect('super-admin/pesananAdmin');
     }
 
