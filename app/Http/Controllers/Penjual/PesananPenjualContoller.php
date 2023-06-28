@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Penjual;
 
 use App\Models\Checkout;
+use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use Psy\VersionUpdater\Checker;
 use App\Http\Controllers\Controller;
@@ -107,7 +108,14 @@ class PesananPenjualContoller extends Controller
             'bukti_pengiriman' => $path . '/' . $file->getClientOriginalName()
         ];
 
-        $update = Checkout::where('id', $id)->update($data);
+        $update = Checkout::where('id', $id)->first();
+        $update->update($data);
+        Notifikasi::create([
+            'user_id' => $update->user_id, 
+            'checkout_id' => $update->id,
+            'pesan' => 'Pesanan Anda Telah Dikirim',
+        ]);
+        
         if($update) {
             return redirect('penjual/pesanan');
         }

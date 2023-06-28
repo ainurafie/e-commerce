@@ -16,7 +16,7 @@
 
 
             <!-- Search box -->
-            <div class="relative w-[608px]">
+            <div class="relative w-[608px] ">
                 <input type="search" id="search-dropdown"
                     class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-2 border border-[#CFCFCF]"
                     placeholder="Cari" required>
@@ -31,7 +31,7 @@
                 </button>
             </div>
             <a href="/keranjang">
-            <button class="mx-7">
+            <button class="mx-4">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -40,13 +40,43 @@
                 </svg>
             </button>
             </a>
+                <button class="mx-4" data-dropdown-toggle="list-notifikasi" type="button">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.0002 29.3335C17.4668 29.3335 18.6668 28.1335 18.6668 26.6668H13.3335C13.3335 27.3741 13.6144 28.0524 14.1145 28.5524C14.6146 29.0525 15.2929 29.3335 16.0002 29.3335ZM24.0002 21.3335V14.6668C24.0002 10.5735 21.8135 7.14683 18.0002 6.24016V5.3335C18.0002 4.22683 17.1068 3.3335 16.0002 3.3335C14.8935 3.3335 14.0002 4.22683 14.0002 5.3335V6.24016C10.1735 7.14683 8.00016 10.5602 8.00016 14.6668V21.3335L5.3335 24.0002V25.3335H26.6668V24.0002L24.0002 21.3335Z"
+                            fill="#8D8B8B" />
+                    </svg>
+                </button>
+
+                {{-- popover list notifikasi --}}
+                
+                <div id="list-notifikasi" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
+                    @foreach ($notifikasi as $notif)
+                    {{-- @php
+                        $status = App\Models\Checkout::where('user_id', $notif->user_id)->first() 
+                    @endphp --}}
+                    <li>
+                        <button id="doubleDropdownButton" data-dropdown-toggle="detail-notifikasi" data-dropdown-placement="left-start" type="button" class="font-medium text-left w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            {{ $notif->pesan }}
+                        </button>
+                        <hr class="mt-1">
+                    </li>
+                    <livewire:modal.notification-detail :index="$notif->id"/>
+                    @endforeach
+                    </ul>
+                </div>
             <!-- Dropdown-->
 
             <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
                 class="flex items-center text-monttserat font-regular text-gray-500 rounded-lg hover:text-grey-600  "
                 type="button">
                 <span class="sr-only">Open user menu</span>
+                @if (Auth::user()->image == '')
+                <img class="w-10 h-10 mr-2 rounded-full" src="..\assets\images\defaultpp.jpeg" alt="user photo">
+                @else
                 <img class="w-10 h-10 mr-2 rounded-full" src="{{ Storage::url(Auth::user()->image) }}" alt="user photo">
+                @endif
                 {{ Auth::guest() ? 'Unknow' : Auth::user()->username }}
                 <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 14 20"
                     xmlns="http://www.w3.org/2000/svg">

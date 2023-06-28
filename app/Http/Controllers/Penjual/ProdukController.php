@@ -120,6 +120,9 @@ class ProdukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produk = Produk::where('id', $id)->delete();
+        if($produk) {
+            return redirect('/penjual/produk');
+        }
     }
 }

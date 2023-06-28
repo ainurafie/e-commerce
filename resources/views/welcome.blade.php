@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id" />
     <div class="md:px-24 mt-48">
         <div class="mt-50 bg-no-repeat bg-center bg-cover h-[402px] md:px-24 rounded-2xl lg:w-full "
             style="background-image: url('../assets/images/banner.svg');">
@@ -41,7 +41,7 @@
             <h1 class="text-2xl font-montserrat font-semibold">Kategori</h1>
             <div class="flex gap-[50px] justify-center">
                 <div class="w-max">
-                    <a href="/wedding-organizer" class="w-max">
+                    <a href="kategori/weddingOrganizer" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#B4CF90" />
@@ -53,7 +53,7 @@
                     <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Wedding <br /> Organizer</h1>
                 </div>
                 <div class="w-max">
-                    <a href="/makanan-minuman" class="w-max">
+                    <a href="kategori/makananMinuman" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#6D9D6F" />
@@ -75,7 +75,7 @@
                     <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Makanan<br /> dan Minuman</h1>
                 </div>
                 <div class="w-max">
-                    <a href="/fashion" class="w-max">
+                    <a href="kategori/fashion" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#7ABDB7" />
@@ -84,10 +84,10 @@
                                 fill="#008276" />
                         </svg>
                     </a>
-                    <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Baju</h1>
+                    <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Fashion</h1>
                 </div>
                 <div class="w-max">
-                    <a href="" class="w-max">
+                    <a href="/kategori/aksesoris" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#3A959E" />
@@ -99,7 +99,7 @@
                     <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Accesories</h1>
                 </div>
                 <div class="w-max">
-                    <a href="" class="w-max">
+                    <a href="kategori/kerajinan" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#4895A6" />
@@ -111,7 +111,7 @@
                     <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Kerajinan</h1>
                 </div>
                 <div class="w-max">
-                    <a href="" class="w-max">
+                    <a href="/kategori/pertanian" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#678FA8" />
@@ -133,14 +133,14 @@
                 </div>
             </div>
             
-
             <div class="py-7">
-                <h1 class="text-2xl font-montserrat font-semibold">Paling banyak dikunjungi</h1>
-                <div class="grid grid-cols-4 gap-y-5 mt-7">
-                    <livewire:card.produck.index />
+                <h1 class="text-2xl font-montserrat font-semibold">Paling banyak Terjual</h1>
+                <div class="mt-7 h-[500px] w-full overflow-x-auto">
+                    <div class="flex gap-5 w-full">
+                        <livewire:card.produck.index :terlaris="Auth::user()->id"/>
+                    </div>
                 </div>
             </div>
-
 
             <div class="grid grid-cols-2 w-full py-16 justify-items-center">
                 <a href="/wedding-organizer" class="relative hover:brightness-75 mb-[14px]">

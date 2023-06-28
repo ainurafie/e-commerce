@@ -87,7 +87,7 @@
 
                             <div class="">
                                 <h1 class="text-[#CDCDCD] font-montserrat text-xs">Produk Terjual</h1>
-                                <h1 class="text-black font-montserrat font-medium text-lg">{{ $data->count() }} Produk</h1>
+                                <h1 class="text-black font-montserrat font-medium text-lg">{{ $terjual->sum('terjual') }} Produk</h1>
                             </div>
                         </div>
                         <div class="flex gap-6 items-center border-l border-r px-[30px] border-[#1A5427]">

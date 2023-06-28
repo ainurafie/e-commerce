@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Checkout;
 use App\Models\Produk;
 use App\Models\Keranjang;
+use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -53,19 +54,31 @@ class CheckoutController extends Controller
             $file = $request->file('bukti_pembayaran');
             Storage::putFileAs($path, $file, $file->getClientOriginalName());
         }
-        $penjual_id = Produk::where('id', $request->produk_id)->first();
+        $produk = Produk::where('id', $request->produk_id)->first();
         Checkout::create([
             'user_id' => Auth::user()->id,
             'produk_id' => $request->produk_id,
-            'penjual_id' => $penjual_id->user_id,
+            'penjual_id' => $produk->user_id,
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
             'ukuran' => ($request->ukuran) ? $request->ukuran : '',   
             'varian' => ($request->varian) ? $request->varian : '',
-            'no' => '09123456789',
+            'no' => Auth::user()->noHp,
             'metode_pembayaran' => $request->metode_pembayaran,
             'bukti_pembayaran' => ($request->file('bukti_pembayaran')) ? $path . '/' . $file->getClientOriginalName() : '',
-            'alamat' => 'Tegal',
+            'alamat' => Auth::user()->alamat,
+        ]);
+        $produk->update([
+            'stok'=>$produk->stok - $request->jumlah,
+            'terjual'=>$produk->terjual + $request->jumlah,
+        ]);
+
+        $Checkout_id = Checkout::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->first();
+        // return $Checkout_id;
+        Notifikasi::create([
+            'user_id' => Auth::user()->id, 
+            'checkout_id' => $Checkout_id->id,
+            'pesan' => 'Pesanan Anda Sedang Dikemas',
         ]);
 
         if($request->keranjang) {
