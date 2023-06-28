@@ -6,9 +6,10 @@
             <div class="">
                 <div class="">
                     <select name="category"
-                        class="bg-white border border-[#CDCDCD] text-[#CDCDCD] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        class="bg-white border border-[#1E1E1E] text-[#1E1E1E] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="" selected>-Pilih Jenis Laporan-</option>
-                        <option value=""></option>
+                        <option value="Penipuan">Penipuan</option>
+                        <option value="Penipuan">Produk Tidak Sesuai</option>
                     </select>
                 </div>
                 </h1>

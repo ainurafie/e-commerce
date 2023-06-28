@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +29,7 @@
                 <div class="col-span-4 border-r ">
                     <div class="flex gap-5 items-center ">
                         <img src="../assets/images/logo.svg" alt="" class="w-24 h-24 rounded-full">
-                        <div class="">
+                        <div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             <h1 class="text-xl font-montserrat font-semibold text-black mb-2">Apik Pernik</h1>
                             <h1 class="text-sm font-montserrat font-medium text-[#C2C0C0] mb-2">Purwokerto Utara</h1>
                             <div class="flex gap-[14px]">
@@ -203,7 +205,37 @@
             }
 
         }
-
+        <div class="bg-gray-200">
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 1</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 2</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 3</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 4</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 5</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+        <div class="bg-white p-4">
+          <h1 class="text-lg font-bold mb-2">Konten 6</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec est vel arcu varius pellentesque.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
         countItems();
     </script>
 </body>
