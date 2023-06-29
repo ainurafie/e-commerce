@@ -39,7 +39,12 @@
                     <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
                         <option value="" selected>Pilih jenis produk</option>
-                        <option value="fashion">Fashion</option>
+                        <option value="fashion">Wedding Organizer</option>
+                        <option value="makanan-minuman">Makanan dan Minuman</option>
+                        <option value="pakaian">Pakaian</option>
+                        <option value="aksesoris">Aksesoris</option>
+                        <option value="kerajinan">Kerajinan</option>
+                        <option value="pertanian">Pertanian</option>
                     </select>
                 </div>
             </div>
@@ -96,7 +101,7 @@
                     <div data-repeater-item="" class="flex flex-row gap-4">
                         <input type="text" id="" name="group_a" value=""
                             class="bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-34 mt-6"
-                            placeholder="Tambahkan Hastag">
+                            placeholder="Tambahkan Varian">
                         <button type="button" class="text-black rounded-lg mt-6" data-repeater-delete>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
