@@ -98,7 +98,7 @@
                     <div data-repeater-item="" class="flex flex-row gap-4">
                         <input type="text" id="" name="group_a" value=""
                             class="bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-34 mt-6"
-                            placeholder="Tambahkan Hastag">
+                            placeholder="Tambahkan Varian">
                         <button type="button" class="text-black rounded-lg mt-6" data-repeater-delete>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -109,9 +109,9 @@
                     </div>
                 </div>
                 <button type="button"
-                    class="bg-[#FFEDEB] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
+                    class="bg-[#D4EDDA] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
                     data-repeater-create="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2AA345"
                         class="bi bi-plus" viewBox="0 0 16 16">
                         <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
