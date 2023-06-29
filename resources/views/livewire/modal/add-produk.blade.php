@@ -38,12 +38,13 @@
                 <div class="">
                     <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
-                        <option value="" selected>Pilih jenis produk</option>
-                        <option value="fashion">Fashion</option>
+                        <option value=""selected>Pilih jenis produk </option>
+                        <option value="weddingOrganizer">Wedding Organizer</option>
                         <option value="makananMinuman">Makanan Minuman</option>
-                        <option value="pertanian">Pertanian</option>
-                        <option value="weddingOrganizer">wedding Organizer</option>
+                        <option value="pakaian">Pakaian</option>
                         <option value="aksesoris">Aksesoris</option>
+                        <option value="kerajinan">Kerajinan</option>
+                        <option value="pertanian">Pertanian</option>
                     </select>
                 </div>
             </div>
@@ -52,8 +53,8 @@
                     Deskripsi<label class="text-[#CB3A26]">*</label>
                 </h1>
                 <textarea rows="2" name="deskripsi"
-                    class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
-                    placeholder="Tuliskan deskripsi produk">
+                class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
+                placeholder="Masukkan deskripsi produk disini"></textarea>
                 </textarea>
             </div>
             <div class="relative mb-5">
@@ -65,7 +66,7 @@
                         <label type="file" name="image-product" required>
                             <span class="">
                                 <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
-                                    alt="">
+                                    alt="">   
                             </span>
                             <input class="hidden" type="file" name="images" onchange="previewImage(this)">
                         </label>
