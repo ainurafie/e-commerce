@@ -106,6 +106,9 @@
                             <th scope="col" class="px-6 py-3 truncate">
                                 Produk
                             </th>
+                            <th scope="col" class="px-6 py-3 truncate">
+                                No Telp
+                            </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah
                             </th>

@@ -38,12 +38,13 @@
                 <div class="">
                     <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
-                        <option value="" selected>Pilih jenis produk</option>
-                        <option value="fashion">Fashion</option>
+                        <option value=""selected>Pilih jenis produk </option>
+                        <option value="weddingOrganizer">Wedding Organizer</option>
                         <option value="makananMinuman">Makanan Minuman</option>
-                        <option value="pertanian">Pertanian</option>
-                        <option value="weddingOrganizer">wedding Organizer</option>
+                        <option value="pakaian">Pakaian</option>
                         <option value="aksesoris">Aksesoris</option>
+                        <option value="kerajinan">Kerajinan</option>
+                        <option value="pertanian">Pertanian</option>
                     </select>
                 </div>
             </div>
@@ -52,8 +53,8 @@
                     Deskripsi<label class="text-[#CB3A26]">*</label>
                 </h1>
                 <textarea rows="2" name="deskripsi"
-                    class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
-                    placeholder="Tuliskan deskripsi produk">
+                class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
+                placeholder="Masukkan deskripsi produk disini"></textarea>
                 </textarea>
             </div>
             <div class="relative mb-5">
@@ -65,7 +66,7 @@
                         <label type="file" name="image-product" required>
                             <span class="">
                                 <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
-                                    alt="">
+                                    alt="">   
                             </span>
                             <input class="hidden" type="file" name="images" onchange="previewImage(this)">
                         </label>
@@ -98,7 +99,7 @@
                     <div data-repeater-item="" class="flex flex-row gap-4">
                         <input type="text" id="" name="group_a" value=""
                             class="bg-gray-50 rounded-lg border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-34 mt-6"
-                            placeholder="Tambahkan Hastag">
+                            placeholder="Tambahkan Varian">
                         <button type="button" class="text-black rounded-lg mt-6" data-repeater-delete>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -109,9 +110,9 @@
                     </div>
                 </div>
                 <button type="button"
-                    class="bg-[#FFEDEB] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
+                    class="bg-[#D4EDDA] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
                     data-repeater-create="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2AA345"
                         class="bi bi-plus" viewBox="0 0 16 16">
                         <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
