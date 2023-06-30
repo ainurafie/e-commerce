@@ -115,7 +115,7 @@
                 </ul>
             </div>
             <div class="flex px-5 py-1.5 gap-3 rounded-[8px] bg-[#70B17F] items-center justify-center">
-                <a href="" class="text-xs font-montserrat text-white pr-3">Keluar</a>
+                <a href="/logout" class="text-xs font-montserrat text-white pr-3">Keluar</a>
                 <a href="/profile-user" class="border-l pl-3 border-white">
                     <img class="w-10 h-10 rounded-full" src="/assets/images/kimtae.png" alt="user photo">
                 </a>

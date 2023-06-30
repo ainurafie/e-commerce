@@ -11,9 +11,11 @@ class Index extends Component
 {
     public $terlaris;
     public $kategori;
-    public function mount($terlaris = NULL, $kategori = NULL) {
+    public $index;
+    public function mount($terlaris = NULL, $kategori = NULL, $index = NULL) {
         $this->terlaris = $terlaris;
         $this->kategori = $kategori;
+        $this->index = $index;
     }
 
     public function render()
@@ -28,6 +30,9 @@ class Index extends Component
             }
             if($this->kategori != NULL) {
                 $data = Produk::where('jenis', $this->kategori)->get();
+            }
+            if($this->index != NULL) {
+                $data = Produk::where('user_id', $this->index)->get();
             }
             
             return view('livewire.card.produck.index', [

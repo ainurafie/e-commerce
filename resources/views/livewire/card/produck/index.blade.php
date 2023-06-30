@@ -9,7 +9,7 @@
             <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]">   
             {{ $d->nama }}</div>
             <p class="text-[#919191] text-xs mb-5 line-clamp-1">
-            <a href="/detail-toko" class="relative hover:brightness-75 mb-[14px]">    
+            <a href="/detail-toko/{{ $user->id }}" class="relative hover:brightness-75 mb-[14px]">    
             {{ $user->name }}</a>
             </p>
             <div class="flex justify-between items-center">

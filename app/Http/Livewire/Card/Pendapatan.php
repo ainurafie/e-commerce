@@ -11,7 +11,7 @@ class Pendapatan extends Component
     public function render()
     {
         $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
+            $query->where('status_pemesanan', 'Selesai');
         })->get();
         return view('livewire.card.pendapatan', ['data' => $data]);
     }
