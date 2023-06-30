@@ -15,7 +15,10 @@ class UlasanController extends Controller
      */
     public function index()
     {
-        //
+        $data = Ulasan::where('penjual_id', Auth::user()->id)->get();
+        return view('penjual.ulasan', [
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -39,6 +42,7 @@ class UlasanController extends Controller
         Ulasan::create([
             'user_id' => Auth::user()->id,
             'produk_id' => $request->produk_id,
+            'penjual_id' => $request->penjual_id,
             'pesan' => $request->pesan,
             'rating' => 5,
         ]);

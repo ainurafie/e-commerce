@@ -50,24 +50,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $d)
+                    @php
+                        $user = App\Models\User::where('id', $d->penjual_id)->first();
+                        $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                    @endphp
                     <tr class="bg-white border-b">
-
                         <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                            <img class="w-10 h-10 rounded-full" src="/assets/images/kimtae.png" alt="Jese image">
+                            <img class="w-10 h-10 rounded-full" src="{{ Storage::url($user->image) }}" alt="Jese image">
                             <div class="pl-3">
-                                <div class="text-base font-semibold">tehyung</div>
+                                <div class="text-base font-semibold">{{ $user->name }}</div>
                             </div>
                         </th>
-                        <td class="px-6 py-4">
-                            Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                            Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
+                        <td class="px-6 py-4">{{$user->alamat}}
                         </td>
                         <td class="px-6 py-4 truncate">
                             <div
                                 class="py-2 px-2.5 text-center rounded-[8px] bg-[#D4EDDA] text-[#004E11] text-xs font-semibold font-montserrat">
-                                Disetujui</div>
+                                {{ $d->jenis }}</div>
                         </td>
                         <td class="px-6 py-4">
+                            <livewire:modal.laporan :index="$d->id" />
                             <button data-modal-toggle="laporan">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +81,8 @@
                             </button>
                         </td>
                     </tr>
-                    <tr class="bg-white border-b">
+                    @endforeach
+                    {{-- <tr class="bg-white border-b">
 
                         <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
                             <img class="w-10 h-10 rounded-full" src="/assets/images/kimtae.png" alt="Jese image">
@@ -105,7 +109,7 @@
                                 </svg>
                             </button>
                         </td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
         </div>
@@ -114,7 +118,7 @@
     <div class="mt-80">
         <livewire:footer.index />
     </div>
-    <livewire:modal.laporan />
+    
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>

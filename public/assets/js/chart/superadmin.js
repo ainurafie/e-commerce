@@ -26,11 +26,14 @@ var data2 = {
 };
 
 // Data untuk grafik pie ketiga
+let penipuan = document.getElementById("penipuan").value;
+let tidaksesuai = document.getElementById("tidaksesuai").value;
+
 var data3 = {
     labels: ["Penipuan", "Produk tidak sesuai"],
     datasets: [
         {
-            data: [10, 70, 20],
+            data: [penipuan, tidaksesuai],
             backgroundColor: ["#F76565", "#62F6E5"],
         },
     ],

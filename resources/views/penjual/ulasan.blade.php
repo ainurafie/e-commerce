@@ -50,21 +50,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $d)
+                    @php
+                        $user = App\Models\User::where('id', $d->user_id)->first();
+                        $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                    @endphp
                     <tr class="bg-white border-b">
-
                         <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                            <img class="w-[59px] h-[59px] rounded-[8px]" src="/assets/images/produk.png"
+                            <img class="w-[59px] h-[59px] rounded-[8px]" src="{{ Storage::url($produk->gambar) }}"
                                 alt="Jese image">
                             <div class="pl-3">
-                                <div class="text-base font-semibold">Manik manik</div>
+                                <div class="text-base font-semibold">{{ $produk->nama }}</div>
                             </div>
                         </th>
                         <td class="px-6 py-4 truncate">
-                            Jennie Rubyjane
+                            {{ $user->name }}
                         </td>
                         <td class="px-6 py-4">
-                            Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                            Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
+                            {{$user->alamat}}
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex gap-1 items-center">
@@ -96,53 +99,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr class="bg-white border-b">
-
-                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                            <img class="w-[59px] h-[59px] rounded-[8px]" src="/assets/images/produk.png"
-                                alt="Jese image">
-                            <div class="pl-3">
-                                <div class="text-base font-semibold">Manik manik</div>
-                            </div>
-                        </th>
-                        <td class="px-6 py-4 truncate">
-                            Jennie Rubyjane
-                        </td>
-                        <td class="px-6 py-4">
-                            Komplek PJKA 386-388, JL. Jend. Sudirman, Purwokerto Lor, Purwokerto, Sokanegara, Kec.
-                            Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53115
-                        </td>
-                        <td class="px-6 py-4">
-                            <div class="flex gap-1 items-center">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-
-                            </div>
-                        </td>
-                    </tr>
-
+                    @endforeach
                 </tbody>
             </table>
         </div>

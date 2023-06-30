@@ -39,9 +39,6 @@
                     <input type="text" name="pembeli" id="pembeli" value="{{ $pembeli }}" hidden>
                 </div>
                 <canvas id="chart1" class=></canvas>
-                <div class="flex justify-end">
-                    <a href="" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
-                </div>
             </div>
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
                 <div class="border-b border-[#CDCDCD]">
@@ -51,12 +48,14 @@
                 </div>
                 <canvas id="chart2" class=></canvas>
                 <div class="flex justify-end">
-                    <a href="/super-admin/pesanan" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
+                    <a href="/super-admin/pesananAdmin" class="text-[10px] font-montserrat font-semibold text-[#004E11]">Lihat semua</a>
                 </div>
             </div>
             <div class="px-10 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto">
                 <div class="border-b border-[#CDCDCD]">
                     <h1 class="text-sm font-montserrat font-medium text-[#7D8E7C] mb-5">Grafik Laporan</h1>
+                    <input type="text" name="penipuan" id="penipuan" value="{{ $penipuan }}" hidden>
+                    <input type="text" name="tidaksesuai" id="tidaksesuai" value="{{ $tidaksesuai }}" hidden>
                 </div>
                 <canvas id="chart3" class=></canvas>
                 <div class="flex justify-end">

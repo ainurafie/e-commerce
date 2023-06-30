@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Penjual;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Ulasan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -86,7 +87,11 @@ class ProdukController extends Controller
         //     return view("403");
         // }
         $data = Produk::where('id', $id)->first();
-        return view('detailProduct', ['data'=>$data]);
+        $ulasan = Ulasan::where('produk_id', $id)->get();
+        return view('detailProduct', [
+            'data'=>$data,
+            'ulasan' => $ulasan,
+        ]);
     }
 
     /**

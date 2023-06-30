@@ -40,10 +40,11 @@ class="z-10 hidden text-monttserat bg-white divide-y divide-black-100 rounded-lg
             <div class="col-span-2 ...">
                 <form method="POST" action="{{ route('ulasan.store') }}">
                     @csrf
-                    <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
+                    <h1 class="font-medium mb-2.5">
                         Ulasan<label class="text-[#CB3A26]">*</label>
                     </h1>
                     <input type="text" name="produk_id" value="{{ $produk->id }}" hidden>
+                    <input type="text" name="penjual_id" value="{{ $produk->user_id }}" hidden>
                     <textarea rows="2" name="pesan" value=""
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
                         placeholder="Tuliskan Ulasan Ada tentang produk ini">

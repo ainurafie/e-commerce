@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index :data="Auth::user()->id"/>
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 my-[200px] py-32">
         <div class="flex justify-between items-center">
             <h1 class="text-2xl font-montserrat font-semibold">Wedding Organizer</h1>
