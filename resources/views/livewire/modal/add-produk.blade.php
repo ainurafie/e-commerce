@@ -38,9 +38,10 @@
                 <div class="">
                     <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
-                        <option value="" selected>Pilih jenis produk</option>
-                        <option value="fashion">Wedding Organizer</option>
-                        <option value="makanan-minuman">Makanan dan Minuman</option>
+
+                        <option value=""selected>Pilih jenis produk </option>
+                        <option value="weddingOrganizer">Wedding Organizer</option>
+                        <option value="makananMinuman">Makanan Minuman</option>
                         <option value="pakaian">Pakaian</option>
                         <option value="aksesoris">Aksesoris</option>
                         <option value="kerajinan">Kerajinan</option>
@@ -53,8 +54,8 @@
                     Deskripsi<label class="text-[#CB3A26]">*</label>
                 </h1>
                 <textarea rows="2" name="deskripsi"
-                    class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
-                    placeholder="Tuliskan deskripsi produk">
+                class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
+                placeholder="Masukkan deskripsi produk disini"></textarea>
                 </textarea>
             </div>
             <div class="relative mb-5">
@@ -66,14 +67,12 @@
                         <label type="file" name="image-product" required>
                             <span class="">
                                 <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
-                                    alt="">
+                                    alt="">   
                             </span>
                             <input class="hidden" type="file" name="images" onchange="previewImage(this)">
                         </label>
-                        <button class="delete-button" onclick="deleteRepeater(this)" class="mb-2">Delete</button>
                     </div>
                 </div>
-                <button onclick="addImageRepeater()">Add Image</button>
 
                 <h1 class="text-sm text-black font-montserrat font-medium m-[14px]">Ukuran
                 </h1>
@@ -112,9 +111,9 @@
                     </div>
                 </div>
                 <button type="button"
-                    class="bg-[#FFEDEB] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
+                    class="bg-[#D4EDDA] text-[#BC2B1C] w-max hover:bg-gray-300 hover:text-white rounded-lg p-4 flex items-center mt-3"
                     data-repeater-create="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2AA345"
                         class="bi bi-plus" viewBox="0 0 16 16">
                         <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />

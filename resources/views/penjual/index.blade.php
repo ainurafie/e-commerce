@@ -78,31 +78,19 @@
                     </div>
                     <div class="px-5 py-5 border border-[#CDCDCD] rounded-[6px] w-full h-auto shadow">
                         <div class="border-b border-[#CDCDCD]">
-                            <h1 class="text-sm font-montserrat font-medium text-[#7D8E7C] mb-5">Paling sering dilihat
+                            <h1 class="text-sm font-montserrat font-medium text-[#7D8E7C] mb-5">Paling banyak Terjual
                             </h1>
                         </div>
                         <div class="py-6">
+                            @foreach ($produk as $p)
                             <div class="flex gap-2.5 items-center mb-3">
-                                <img src="../assets/images/produk.png" alt="" class="w-10 h-10 rounded-[8px]">
+                                <img src="{{ Storage::url($p->gambar) }}" alt="" class="w-10 h-10 rounded-[8px]">
                                 <div class="">
-                                    <h1 class="text-xs font-montserrat font-semibold text-black mb-1.5">Nama Produk</h1>
-                                    <h1 class="text-[10px] font-montserrat text-[#CDCDCD]">23 kali dilihat</h1>
+                                    <h1 class="text-xs font-montserrat font-semibold text-black mb-1.5">{{ $p->nama }}</h1>
+                                    <h1 class="text-[10px] font-montserrat text-[#CDCDCD]">{{ $p->terjual }} produk terjual</h1>
                                 </div>
                             </div>
-                            <div class="flex gap-2.5 items-center mb-3">
-                                <img src="../assets/images/produk.png" alt="" class="w-10 h-10 rounded-[8px]">
-                                <div class="">
-                                    <h1 class="text-xs font-montserrat font-semibold text-black mb-1.5">Nama Produk</h1>
-                                    <h1 class="text-[10px] font-montserrat text-[#CDCDCD]">23 kali dilihat</h1>
-                                </div>
-                            </div>
-                            <div class="flex gap-2.5 items-center mb-3">
-                                <img src="../assets/images/produk.png" alt="" class="w-10 h-10 rounded-[8px]">
-                                <div class="">
-                                    <h1 class="text-xs font-montserrat font-semibold text-black mb-1.5">Nama Produk</h1>
-                                    <h1 class="text-[10px] font-montserrat text-[#CDCDCD]">23 kali dilihat</h1>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -117,6 +105,9 @@
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
                                 Produk
+                            </th>
+                            <th scope="col" class="px-6 py-3 truncate">
+                                No Telp
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Jumlah

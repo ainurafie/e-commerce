@@ -21,7 +21,7 @@
 <body>
     <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 my-[200px]">
-            <h1 class="text-2xl font-montserrat font-semibold">Makanan dan Minuman</h1>
+            <h1 class="text-2xl font-montserrat font-semibold">Pertanian</h1>
             <div class="grid grid-cols-4 gap-y-5 mt-7">
                 <livewire:card.produck.index :kategori="$data"/>
             </div>

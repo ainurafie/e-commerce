@@ -69,12 +69,19 @@
                     </thead>
                     <tbody>
                         @foreach ($data as $d)
+                        @php
+                            $user = App\Models\User::where('id', $d->user_id)->first();
+                            $produk = App\Models\Produk::where('id', $d->produk_id)->first();
+                        @endphp
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4 truncate">
-                                {{ $d->user_id }}
+                                {{ $user->name }}
                             </td>
                             <td class="px-6 py-4 truncate">
-                                {{ $d->produk_id }}
+                                {{ $produk->nama }}
+                            </td>
+                            <td class="px-6 py-4 truncate">
+                                {{ $user->noHp }}
                             </td>
                             <td class="px-6 py-4 truncate">
                                 {{ $d->created_at }}
@@ -83,10 +90,10 @@
                                 {{ $d->jumlah }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $d->alamat }}
+                                {{ $user->alamat }}
                             </td>
                             <td class="px-6 py-4">
-                                {{$d->harga}}
+                                {{$produk->harga * $d->jumlah}}
                             </td>
                         </tr>
                         @endforeach

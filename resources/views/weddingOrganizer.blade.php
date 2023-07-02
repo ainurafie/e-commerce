@@ -19,8 +19,8 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
-    <div class="md:px-24 mt-5 py-32">
+    <livewire:navbar.index :index="Auth::user()->id"/>
+    <div class="md:px-24 my-[200px] py-32">
         <div class="flex justify-between items-center">
             <h1 class="text-2xl font-montserrat font-semibold">Wedding Organizer</h1>
             <button data-dropdown-toggle="dropdownFilter" class="px-4 py-3 flex items-center gap-4 rounded-xl bg-[#2AA345] text-white"> Filter<svg
@@ -44,14 +44,7 @@
             </div>
         </div>
         <div class="grid grid-cols-4 gap-y-5 mt-7">
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
-            <livewire:card.produck.index />
+            <livewire:card.produck.index :kategori="$data"/>
         </div>
     </div>
     </div>

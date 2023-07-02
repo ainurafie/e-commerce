@@ -19,19 +19,12 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
-    <div class="md:px-24 mt-1">
+    <livewire:navbar.index :index="Auth::user()->id"/>
+    <div class="md:px-24 my-[200px]">
             <h1 class="text-2xl font-montserrat font-semibold">Fashion
             </h1>
             <div class="grid grid-cols-4 gap-y-5 mt-7">
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
-                <livewire:card.produck.index />
+                <livewire:card.produck.index :kategori="$data"/>
             </div>
         </div>
     </div>

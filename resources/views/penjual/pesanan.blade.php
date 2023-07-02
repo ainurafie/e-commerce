@@ -65,7 +65,9 @@
                                 Produk
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
+
                                 No telp
+
                             </th>
                             <th scope="col" class="px-6 py-3 truncate">
                                 tanggal

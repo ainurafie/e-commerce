@@ -1,4 +1,7 @@
 @foreach ($data as $d)
+@php
+    $user = App\Models\User::where('id', $d->user_id)->first();
+@endphp
     <div class="w-[278px] rounded overflow-hidden shadow-lg">
         <a href="/detail-product/{{ $d->id }}" class="relative hover:brightness-75 mb-[14px]"><img class="w-full" src="{{ Storage::url($d->gambar) }}" alt="Gambar gagal load"></a>
         <div class="px-6 py-4">
@@ -6,24 +9,34 @@
             <a href="/detail-product" class="relative hover:brightness-75 mb-[14px]">   
             {{ $d->nama }}</div>
             <p class="text-[#919191] text-xs mb-5 line-clamp-1">
-            <a href="/detail-toko" class="relative hover:brightness-75 mb-[14px]">    
-            {{ $d->user->Toko }}</a>
+            <a href="/detail-toko/{{ $user->id }}" class="relative hover:brightness-75 mb-[14px]">    
+            {{ $user->name }}</a>
             </p>
-            <h1 class="text-[#CB3A26] text-base font-montserrat font-medium">{{ $d->harga }}</h1>
-            <div class="flex justify-between mt-3 items-center">
+            <div class="flex justify-between items-center">
+                <h1 class="text-[#CB3A26] text-base font-montserrat font-medium">{{ $d->harga }}</h1>
+                <h1 class="text-xs text-[#919191] font-montserrat">Stok : {{ $d->stok }}</h1>
+            </div>
+            
                 <div class="w-full">
-                    <h1 class="text-xs text-[#919191] font-montserrat">{{ $d->user->alamat }}</h1>
+                    <h1 class="text-xs text-[#919191] font-montserrat">{{ $user->alamat }}</h1>
                 </div>
-                <div class="w-full border-l border-[#cfcfcf] px-6 gap-2 flex items-center">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                @if (Auth::user()->role == 'penjual')
+                <div class="w-full mt-3 gap-2 flex items-center justify-start">
+                    <form method="POST" action="{{ route('produk.destroy', $d->id) }}">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="text-[#E7E7E7] font-montserrat bg-[#CB3A26] text-sm rounded-lg px-2 py-1">Hapus</button>
+                    </form>
+                    <button data-modal-toggle="add-produk" class="text-[#E7E7E7] font-montserrat bg-[#FACA15] text-sm rounded-lg px-2 py-1">Edit</button>
+                    {{-- <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M3.825 19.5167L5.45 12.4917L0 7.76672L7.2 7.14172L10 0.516724L12.8 7.14172L20 7.76672L14.55 12.4917L16.175 19.5167L10 15.7917L3.825 19.5167Z"
                             fill="#FFDD2A" />
                     </svg>
-                    <h1 class="text-sm text-[#919191] font-montserrat">4.9</h1>
+                    <h1 class="text-sm text-[#919191] font-montserrat">4.9</h1> --}}
                 </div>
-            </div>
+                @endif
         </div>
     </div>
 @endforeach

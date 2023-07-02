@@ -39,10 +39,10 @@
                     <div class="flex gap-5 items-center ">
                         <img src="../assets/images/logo.svg" alt="" class="w-24 h-24 rounded-full">
                         <div class="">
-                            <h1 class="text-xl font-montserrat font-semibold text-black mb-2">Apik Pernik</h1>
-                            <h1 class="text-sm font-montserrat font-medium text-[#C2C0C0] mb-2">Purwokerto Utara</h1>
+                            <h1 class="text-xl font-montserrat font-semibold text-black mb-2">{{ Auth::user()->name }}</h1>
+                            <h1 class="text-sm font-montserrat font-medium text-[#C2C0C0] mb-2">{{ Auth::user()->alamat }}</h1>
                             <div class="flex gap-[14px]">
-                                <a href="/">
+                                {{-- <a href="/">
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_149_1801)">
@@ -71,8 +71,8 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                </a>
-                                <a href="/">
+                                </a> --}}
+                                {{-- <a href="/">
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -111,7 +111,7 @@
                                             </radialGradient>
                                         </defs>
                                     </svg>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>

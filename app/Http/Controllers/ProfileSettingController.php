@@ -99,7 +99,7 @@ class ProfileSettingController extends Controller
         $update = User::where('id', Auth::user()->id)->first();
         $update->update($data);
         if($update) {
-            return 'berhasil';
+            return redirect('/');
         }
     }
 

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-[500px] pb-20 mt-48">
 
         <h1 class="text-xl font-montserrat font-semibold mb-10 text-start">Detail Belanja</h1>
@@ -156,7 +156,6 @@
                                 </clipPath>
                             </defs>
                         </svg>
-
                         <h1 class="text-sm font-montserrat">Lihat alamat penjual di maps</h1>
                     </div>
                 </a>

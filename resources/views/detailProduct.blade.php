@@ -113,7 +113,7 @@
 </head>
 
 <body>
-    <livewire:navbar.index />
+    <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 mt-48">
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="mb-[14px] grid grid-cols-12 gap-10 items-center">
@@ -137,22 +137,23 @@
                         d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
                         fill="#FFDD2A" />
                 </svg>
-                <h1 class="text-sm font-montserrat mb-[14px]">4,9 dari 21 ulasan</h1>
+                <h1 class="text-sm font-montserrat mb-[14px]">5 dari 1 ulasan</h1>
             </div>
         </div>
         <div class="grid grid-cols-12">
             <div class="col-span-6 ">
-                {{-- <div class="grid grid-cols-12 mb-6">
+                @foreach ($ulasan as $ul)
+                @php
+                    $user = App\Models\User::where('id', $ul->user_id)->first();
+                @endphp
+                <div class="grid grid-cols-12 mb-6">
                     <div class="col-span-1">
-                        <img src="../assets/images/kimtae.png" alt="" class="rounded-full w-11 h-11">
+                        <img src="{{ Storage::url($user->image) }}" alt="" class="rounded-full w-11 h-11">
                     </div>
-                    <div class="col-span-11 border-b border-[#CECECE]">
-                        <h1 class="text-sm font-montserrat font-semibold mb-2">Kim Kim Tae</h1>
-                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">10 jam yang
-                            lalu</h1>
-                        <h1 class="text-xs font-montserrat font-medium mb-5">Lorem ipsum dolor sit amet consectetur.
-                            Euismod facilisis vulputate aliquam magnis sed ullamcorper laoreet. Orci neque semper neque
-                            donec faucibus. Tincidunt nulla ultrices pulvinar sit mauris massa hendrerit pretium.</h1>
+                    <div class="col-span-11 border-b border-[#CECECE] ps-3">
+                        <h1 class="text-sm font-montserrat font-semibold mb-2">{{ $user->name }}</h1>
+                        <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">{{ \Carbon\carbon::parse($ul->created_at)->locale('id')->diffForhumans() }}</h1>
+                        <h1 class="text-xs font-montserrat font-medium mb-5">{{$ul->pesan}}</h1>
                         <div class="flex gap-2 mb-4">
                             <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -181,8 +182,8 @@
 
                         </div>
                     </div>
-                </div> --}}
-                
+                </div>
+                @endforeach
             </div>
             <div class=" col-span-6 pl-16 ">
                 <div class="bg-[#FDFDFD] rounded flex w-full">
@@ -432,7 +433,7 @@
             <livewire:footer.index />
         </div>
         <livewire:modal.tambah-keranjang />
-    <livewire:modal.laporkan />
+    <livewire:modal.laporkan :index="$data->id" :penjual="$data->user_id"/>
     <livewire:modal.chat />
 
 

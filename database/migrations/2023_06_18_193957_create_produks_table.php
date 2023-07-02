@@ -24,9 +24,10 @@ return new class extends Migration
             $table->string('gambar');
             $table->string('ukuran')->nullable();
             $table->string('varian')->nullable();
+            $table->integer('terjual')->default(0);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
     }
 
