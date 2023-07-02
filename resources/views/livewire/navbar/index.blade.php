@@ -65,15 +65,18 @@
                 </div>
                 <ul class="py-2 text-sm text-gray-700" montserrat="dropdownInformdropdownAvatarNameButtonationButton">
                     <li>
-                        <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                        <a href="profile-user" class="block px-4 py-2 hover:bg-gray-100">Profil</a>
                     </li>
                     <li>
-                        <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                        <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Pengaturan</a>
+                    </li>
+                    <li>
+                        <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Bantuan</a>
                     </li>
                     <li>
                 </ul>
                 <div class="py-2">
-                    <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                    <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Keluar</a>
                 </div>
             </div>
         </div>

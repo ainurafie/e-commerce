@@ -92,7 +92,7 @@
                         <h1 class="text-base font-montserrat text-black font-semibold mb-8">Beli Sekarang</h1>
                         <div class=" grid-cols-2 border-b grid items-center mb-[10px]">
                             <div class="col-span-1 mb-2">
-                                <h1 class="text-[#CDCDCD] text-xs font-montserrat">Nama Product</h1>
+                                <h1 class="text-[#CDCDCD] text-xs font-montserrat">Nama Product\</h1>
                             </div>
                             <div class="col-span-1 mb-2">
                                 <h1 class="text-black font-semibold text-sm font-montserrat">Manik Manik Lucu </h1>
