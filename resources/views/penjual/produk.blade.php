@@ -37,7 +37,7 @@
             <div class="bg-white px-[52px] py-[10px] grid grid-cols-12 rounded-lg">
                 <div class="col-span-4 border-r ">
                     <div class="flex gap-5 items-center ">
-                        <img src="../assets/images/logo.svg" alt="" class="w-24 h-24 rounded-full">
+                        <img src="{{ Storage::url(Auth::user()->image) }}" alt="" class="w-24 h-24 rounded-full">
                         <div class="">
                             <h1 class="text-xl font-montserrat font-semibold text-black mb-2">{{ Auth::user()->name }}</h1>
                             <h1 class="text-sm font-montserrat font-medium text-[#C2C0C0] mb-2">{{ Auth::user()->alamat }}</h1>

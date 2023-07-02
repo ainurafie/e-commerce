@@ -21,7 +21,7 @@ class penjualanController extends Controller
             return view("403");
         }
         $data = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
-            $query->where('status_pengiriman', 'Terkirim');
+            $query->where('status_pemesanan', 'Selesai');
         })->get();
         $user = Checkout::where('penjual_id', Auth::user()->id)->where(function($query) {
             $query->where('status_pengiriman', 'Terkirim');

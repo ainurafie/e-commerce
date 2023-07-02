@@ -15,6 +15,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UlasanController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\dataPenjual;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PesananAdminController;
@@ -136,6 +137,9 @@ Route::prefix('/super-admin')->middleware('auth')->group(function() {
             return redirect('super-admin/laporan');
         }
     });
+
+    Route::get('/data-penjual', [dataPenjual::class, 'index']);
+    Route::get('/data-penjual/{id}', [dataPenjual::class, 'show'])->name('dataPenjual.show');
 });
 
 
