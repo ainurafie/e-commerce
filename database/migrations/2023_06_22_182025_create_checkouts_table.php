@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('status_pengiriman')->nullable();
             $table->string('bukti_pengiriman')->nullable();
             $table->string('status_pemesanan')->nullable();
+            $table->string('bukti_pesanan_selesai')->nullable();
             $table->timestamps();
         });
     }

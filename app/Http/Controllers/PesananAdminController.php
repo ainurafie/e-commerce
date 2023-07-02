@@ -6,6 +6,7 @@ use App\Models\Checkout;
 use App\Models\Notifikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PesananAdminController extends Controller
 {
@@ -82,11 +83,18 @@ class PesananAdminController extends Controller
         if(Auth::user()->role != "admin") {
             return view(403);
         }
-        $data = [
-            'status_pemesanan' => $request->status_pemesanan,
-        ];
+
+        if($request->file('bukti_pesanan_selesai')) {
+            $path = 'Bukti_pesanan_selesai'; 
+            $file = $request->file('bukti_pesanan_selesai');
+            Storage::putFileAs($path, $file, $file->getClientOriginalName());
+        }
+
         $checkout = Checkout::where('id', $id)->first();
-        $checkout->update($data);
+        $checkout->update([
+            'status_pemesanan' => $request->status_pemesanan,
+            'bukti_pesanan_selesai' => $path . '/' . $file->getClientOriginalName(),
+        ]);
         
         Notifikasi::create([
             'user_id' => $checkout->user_id, 

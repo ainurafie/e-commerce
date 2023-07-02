@@ -89,10 +89,12 @@ class ProfileSettingController extends Controller
         $data = [
             'name' => $request->name,
             'username' => $request->username,
+            'toko' => ($request->toko) ? $request->toko : '',
             'ttl' => $request->ttl,
             'kelamin' => $request->gender,
             'noHp' => $request->noHp,
             'alamat' => $request->alamat,
+            'norek' => ($request->rekening) ? $request->rekening : '',
             'image' => $path . "/" . $file->getClientOriginalName(),
         ];
 

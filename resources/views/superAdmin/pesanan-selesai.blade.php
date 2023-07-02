@@ -73,14 +73,25 @@
                     <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Alamat Pengantaran</h1>
                     <h1 class="text-xs text-[#919191] font-montserrat mb-2">{{$data->alamat}}</h1>
                 </div>
-        <form method="POST" action="{{ route('pesananAdmin.update', $data->id) }}">
+        <form method="POST" action="{{ route('pesananAdmin.update', $data->id) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
                 <div class="flex gap-3 items-center mb-7">
                     <input type="checkbox" id="pengantaranSelesai" name="status_pemesanan"
                         class="form-checkbox h-5 w-5 text-[#BA2B60] rounded" value="Selesai">
                     <label for="pengantaranSelesai"
-                        class="cursor-pointer text-xs font-medium text-[#919191]">Pengantaran Selesai</label>
+                        class="cursor-pointer text-xs font-medium text-[#919191]">Pesanan Selesai</label>
+                </div>
+                <div class="relative mb-7">
+                    <h1 class="text-xs text-black font-semibold font-montserrat mb-2">Upload Bukti Pesanan Selesai</h1>
+                    <label type="file" name="image-product" id="image-product" required>
+                        <span class="">
+                            <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
+                                alt="">
+                        </span>
+                        <input class="hidden" type="file" name="bukti_pesanan_selesai" id="image"
+                            onchange="previewImage()">
+                    </label>
                 </div>
                 
             </div>

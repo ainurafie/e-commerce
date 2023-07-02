@@ -50,7 +50,7 @@
 
                 {{-- popover list notifikasi --}}
                 
-                <div id="list-notifikasi" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700">
+                <div id="list-notifikasi" class="pb-24 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
                     @foreach ($notifikasi as $notif)
                     {{-- @php
@@ -101,7 +101,7 @@
                         <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Pengaturan</a>
                     </li>
                     <li>
-                        <a href="/profile-setting" class="block px-4 py-2 hover:bg-gray-100">Bantuan</a>
+                        <a href="/bantuan" class="block px-4 py-2 hover:bg-gray-100">Bantuan</a>
                     </li>
                     <li>
                 </ul>

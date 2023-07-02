@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('kelamin')->nullable();
             $table->string('noHp')->nullable();
             $table->string('toko')->nullable();
+            $table->string('norek')->nullable();
             $table->string('alamat')->nullable();
             $table->string('image')->nullable();
             $table->rememberToken();

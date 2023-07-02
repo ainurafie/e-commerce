@@ -43,7 +43,7 @@
                     <h1 class="text-sm font-montserrat text-[#0C0C0C] text-center font-semibold mb-3">Edit Profile</h1>
                     <div class="relative mb-5">
                         <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
-                            Nama / Nama Toko<label class="text-[#CB3A26]">*</label>
+                            Nama <label class="text-[#CB3A26]">*</label>
                         </h1>
                         <input type="text" id="nama" name="name" value="{{ $data->name }}"
                             class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -57,6 +57,17 @@
                             class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             required>
                     </div>
+                    @if (Auth::user()->role == 'penjual')
+                        <div class="relative mb-5">
+                        <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
+                            Toko<label class="text-[#CB3A26]">*</label>
+                        </h1>
+                        <input type="text" id="toko" name="toko" value="{{ $data->toko }}"
+                            class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            required>
+                    </div>
+                    @endif
+                    
                     <div class="relative mb-5">
                         <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
                             Tanggal Lahir<label class="text-[#CB3A26]">*</label>
@@ -97,6 +108,16 @@
                             placeholder="Tuliskan deskripsi produk">
                         </textarea>
                     </div>
+                    @if (Auth::user()->role == 'penjual')
+                        <div class="relative mb-5">
+                        <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
+                            Rekening BCA<label class="text-[#CB3A26]">*</label>
+                        </h1>
+                        <input type="text" id="rekening" name="rekening" value="{{ $data->rekening }}"
+                            class="bg-white border border-[#004E11] text-[#004E11] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            required>
+                    </div>
+                    @endif
                     <div class="relative mb-5">
                         <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                             Gambar<label class="text-[#CB3A26]">*</label>

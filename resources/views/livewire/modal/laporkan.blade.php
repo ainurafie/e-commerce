@@ -1,6 +1,6 @@
 <!-- Main modal -->
-<div id="lapor" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+<div id="lapor" tabindex="2" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full bottom-0 right-0">
     <div class="relative w-[389px] h-full md:h-auto">
         <div class="relative rounded-lg px-[30px] py-8 shadow bg-white">
         <form method="POST" action="/laporkan" enctype="multipart/form-data">
