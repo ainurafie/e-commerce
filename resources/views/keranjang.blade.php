@@ -19,9 +19,15 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <livewire:navbar.index />
     <div class="md:px-24 mt-48">
         <h1 class="text-xl font-montserrat font-semibold px-6">Keranjang</h1>
+=======
+    <livewire:navbar.index :index="Auth::user()->id"/>
+    <div class="md:px-24 mt-32">
+        <h1 class="text-xl font-montserrat font-semibold px-2">Keranjang</h1>
+>>>>>>> Stashed changes
         {{-- @dd($data) --}}
         @foreach ($data as $d)
         <div class="bg-white rounded-xl py-[17px] px-6 ">
@@ -117,7 +123,6 @@
         </div>
         @endforeach
     </div>
-    <livewire:footer.index />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $('#select-all').click(function() {
