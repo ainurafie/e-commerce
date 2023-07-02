@@ -38,6 +38,7 @@
                 <div class="">
                     <select name="jenis"
                         class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5">
+
                         <option value=""selected>Pilih jenis produk </option>
                         <option value="weddingOrganizer">Wedding Organizer</option>
                         <option value="makananMinuman">Makanan Minuman</option>

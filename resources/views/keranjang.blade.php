@@ -19,9 +19,11 @@
 </head>
 
 <body>
+
     <livewire:navbar.index :index="Auth::user()->id"/>
-    <div class="md:px-24 mt-48">
-        <h1 class="text-xl font-montserrat font-semibold px-6">Keranjang</h1>
+    <div class="md:px-24 mt-32">
+        <h1 class="text-xl font-montserrat font-semibold px-2">Keranjang</h1>
+
         {{-- @dd($data) --}}
         @foreach ($data as $d)
         <div class="bg-white rounded-xl py-[17px] px-6 ">
@@ -86,7 +88,7 @@
                         <h1 class="text-base font-montserrat text-black font-semibold mb-8">Beli Sekarang</h1>
                         <div class=" grid-cols-2 border-b grid items-center mb-[10px]">
                             <div class="col-span-1 mb-2">
-                                <h1 class="text-[#CDCDCD] text-xs font-montserrat">Nama Product</h1>
+                                <h1 class="text-[#CDCDCD] text-xs font-montserrat">Nama Product\</h1>
                             </div>
                             <div class="col-span-1 mb-2">
                                 <h1 class="text-black font-semibold text-sm font-montserrat">Manik Manik Lucu </h1>
@@ -117,7 +119,6 @@
         </div>
         @endforeach
     </div>
-    <livewire:footer.index />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $('#select-all').click(function() {
