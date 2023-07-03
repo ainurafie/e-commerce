@@ -30,7 +30,7 @@
                     <div class="flex gap-5 items-center ">
                         <img src="{{ Storage::url($data->image) }}" alt="" class="w-20 h-20 rounded-full">
                         <div class="container mx-auto ">
-                            <h1 class="text-xl font-montserrat font-semibold text-black mb-2">{{ $data->name }}</h1>
+                            <h1 class="text-xl font-montserrat font-semibold text-black mb-2">{{ $data->toko }}</h1>
                             <div class="flex gap-[14px]">
                                 <h1 class="text-sm font-montserrat font-medium text-[#C2C0C0] mb-2">{{ $data->alamat }}</h1>
                             </div>
@@ -44,13 +44,10 @@
                 </div>
                 <div class="col-span-3 flex items-center justify-center">
                     <div class="flex gap-2">
-                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                fill="#FFDD2A" />
-                        </svg>
-                        <h1 class="text-sm font-montserrat mb-[14px]">4,9 dari 21 ulasan</h1>
+                        @php
+                            $ulasan = App\Models\Ulasan::where('penjual_id', $data->id)->count();
+                        @endphp
+                        <h1 class="text-sm font-montserrat mb-[14px]">{{ $ulasan }} ulasan</h1>
                     </div>
                 </div>
             </div>

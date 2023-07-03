@@ -112,13 +112,13 @@
                     <input type="text" name="harga" value="{{ $produk->harga * $jumlah }}" hidden>
                     <input type="text" name="metode_pembayaran" value="COD" hidden>
                 @endif
-                    <button type="submit" class="accordion-button w-full">
+                    <button type="submit" data-modal-toggle="add-cart-cod" class="accordion-button w-full">
                         <div class="w-full flex gap-5 items-center px-8 py-4 bg-[#D4EDDA] rounded-lg mb-[10px]">
                             <img src="../assets/images/cod.svg" alt=""> 
                             <h1 class="text-sm font-montserrat">Cash on Delivery (COD)</h1>
                         </div>
                     </button>
-                    <livewire:modal.payment />
+                    <livewire:modal.cod-berhasil />
                 </form>
                 
                 <a href="" class="">

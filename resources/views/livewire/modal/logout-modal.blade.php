@@ -1,6 +1,6 @@
 <!-- Main modal -->
 <div id="logout" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full m-auto md:inset-0 h-modal md:h-full">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative rounded-lg flex justify-center py-20 shadow bg-white">
@@ -21,11 +21,9 @@
                     <h1 class="text-sm text-black font-montserrat font-medium mb-5 text-center">Apakah anda yakin untuk keluar?</h1>
                 </div>
                 <div class="flex justify-center gap-[14px]">
-                        @csrf
-                        @method('LOGOUT')
-                        <button type="submit"
-                            class="text-[#004E11] font-montserrat font-semibold text-sm bg-[#D4EDDA] rounded-lg py-2 px-6">Ya</button>
-                    </form>
+                    <a href="/logout">
+                        <button class="text-[#004E11] font-montserrat font-semibold text-sm bg-[#D4EDDA] rounded-lg py-2 px-6">Ya</button>
+                    </a>
                     <button data-modal-toggle="logout"
                         class="text-[#E7E7E7] font-montserrat font-semibold text-sm bg-[#004E11] rounded-lg py-2 px-4">Tidak</button>
                 </div>

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('penjual_id'); 
             $table->integer('produk_id');
             $table->string('pesan');
-            $table->string('rating');
             $table->timestamps();
         });
     }

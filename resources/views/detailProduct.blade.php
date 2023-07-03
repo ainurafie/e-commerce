@@ -129,15 +129,9 @@
         <h1 class="text-xl font-montserrat font-semibold mb-[14px]">{{ $data->nama }}</h1>
         <h1 class="text-sm font-montserrat text-[#1E1E1E] mb-[24px]">{{ $data->deskripsi }}</h1>
         <div class="">
-            <h1 class="text-xl font-montserrat font-semibold mb-[14px]">Rating & Ulasan</h1>
+            <h1 class="text-xl font-montserrat font-semibold mb-[14px]">Ulasan</h1>
             <div class="flex gap-2">
-                <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                        fill="#FFDD2A" />
-                </svg>
-                <h1 class="text-sm font-montserrat mb-[14px]">5 dari 1 ulasan</h1>
+                <h1 class="text-sm font-montserrat mb-[14px]">{{ $ulasan->count() }} ulasan</h1>
             </div>
         </div>
         <div class="grid grid-cols-12">
@@ -154,33 +148,6 @@
                         <h1 class="text-sm font-montserrat font-semibold mb-2">{{ $user->name }}</h1>
                         <h1 class="font-montserrat font-medium mb-2 text-[#919191]" style="font-size: 10px">{{ \Carbon\carbon::parse($ul->created_at)->locale('id')->diffForhumans() }}</h1>
                         <h1 class="text-xs font-montserrat font-medium mb-5">{{$ul->pesan}}</h1>
-                        <div class="flex gap-2 mb-4">
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.825 19L5.45 11.975L0 7.25L7.2 6.625L10 0L12.8 6.625L20 7.25L14.55 11.975L16.175 19L10 15.275L3.825 19Z"
-                                    fill="#FFDD2A" />
-                            </svg>
-
-                        </div>
                     </div>
                 </div>
                 @endforeach
@@ -379,10 +346,11 @@
                                     <input type="text" name="harga" value="{{ $data->harga }}" hidden> 
                                     <input class="total-item3 collapse text-center w-10 border-none" type="text"
                                     value="1" name="jumlah" />
-                                    <button type="submit"
+                                    <button type="submit" data-modal-toggle="add-cart"
                                         class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
                                         Keranjang</button>
                                     </div>
+                                    <livewire:modal.keranjang-success />
                                 </form>
                                 @endif
                             </div>
