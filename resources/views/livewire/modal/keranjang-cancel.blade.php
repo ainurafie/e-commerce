@@ -12,7 +12,6 @@
                     <img src="../assets/images/cancel.svg" alt="">
                 </div>
                 <h1 class="text-sm text-black font-montserrat font-medium">Maaf, anda hanya dapat memilih produk dari toko yang sama</h1>
-               
             </div>
         </div>
     </div>

@@ -106,7 +106,7 @@
                     <li>
                 </ul>
                 <div class="py-2">
-                    <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Keluar</a>
+                    <a  data-modal-toggle="logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Keluar</a>
                 </div>
             </div>
         </div>
@@ -118,3 +118,4 @@
 
 </nav>
 </div>
+<livewire:modal.logout-modal />

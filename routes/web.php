@@ -133,6 +133,7 @@ Route::prefix('/super-admin')->middleware('auth')->group(function() {
 
     Route::delete('/deleteUser/{id}', function($id) {
         $user = User::where('id', $id)->delete();
+        $laporan = Laporan::where('penjual_id', $id)->delete();
         if($user) {
             return redirect('super-admin/laporan');
         }
