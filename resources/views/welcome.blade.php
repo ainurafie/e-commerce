@@ -31,7 +31,7 @@
         <div class="py-7">
             <h1 class="text-2xl font-montserrat font-semibold">Terbaru</h1>
             <div class="mt-7 h-[500px] w-full overflow-x-auto">
-                <div class="flex gap-5 w-full">
+                <div class="flex gap-5 w-full flex-wrap">
                     <livewire:card.produck.index />
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Makanan<br /> dan Minuman</h1>
                 </div>
                 <div class="w-max">
-                    <a href="kategori/fashion" class="w-max">
+                    <a href="kategori/pakaian" class="w-max">
                         <svg width="78" height="78" viewBox="0 0 78 78" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="78" height="78" rx="12" fill="#7ABDB7" />
@@ -136,7 +136,7 @@
             <div class="py-7">
                 <h1 class="text-2xl font-montserrat font-semibold">Paling banyak Terjual</h1>
                 <div class="mt-7 h-[500px] w-full overflow-x-auto">
-                    <div class="flex gap-5 w-full">
+                    <div class="flex gap-5 w-full flex-wrap">
                         <livewire:card.produck.index :terlaris="Auth::user()->id"/>
                     </div>
                 </div>

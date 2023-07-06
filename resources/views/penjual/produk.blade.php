@@ -150,7 +150,7 @@
                 </button>
             </div>
             <h1 class="text-2xl font-montserrat font-semibold">Semua Produk</h1>
-            <div class="flex gap-5">
+            <div class="flex gap-5 flex-wrap">
                 <livewire:card.produck.index />
             </div>
         </div>

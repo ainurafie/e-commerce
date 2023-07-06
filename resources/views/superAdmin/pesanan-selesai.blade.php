@@ -90,7 +90,7 @@
                                 alt="">
                         </span>
                         <input class="hidden" type="file" name="bukti_pesanan_selesai" id="image"
-                            onchange="previewImage()">
+                            onchange="previewImage(this)">
                     </label>
                 </div>
                 
@@ -104,7 +104,20 @@
     </div>
 </div>
 </div>
+<script>
+    function previewImage(input) {
+        const imgPreview = input.parentNode.querySelector('.img-preview');
 
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+
+        oFReader.readAsDataURL(input.files[0]);
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        };
+    }
+</script>
 </body>
 
 </html>
