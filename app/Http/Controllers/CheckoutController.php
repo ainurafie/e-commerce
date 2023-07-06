@@ -80,6 +80,11 @@ class CheckoutController extends Controller
             'checkout_id' => $Checkout_id->id,
             'pesan' => 'Pesanan Anda Sedang Dikemas',
         ]);
+        Notifikasi::create([
+            'user_id' => $Checkout_id->penjual_id,
+            'checkout_id' => $Checkout_id->id,
+            'pesan' => 'Ada Pesanan Masuk !',
+        ]);
 
         if($request->keranjang) {
             Keranjang::where('id', $request->keranjang)->delete();

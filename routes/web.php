@@ -161,11 +161,13 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
             $query->where('status_pengiriman', 'Terkirim');
             $query->where('metode_pembayaran', "BCA");
         })->count();
-        $produk = Produk::where('user_id', Auth::user()->id)->orderBy('terjual', 'DESC')->get();
+        $produk = Produk::where('user_id', Auth::user()->id)->orderBy('terjual', 'DESC')->paginate(5);
+        $notifikasi = Notifikasi::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(5);
         return view('penjual.index', [
             'data'=> $data,
             'bca'=> $bca,
             'cod'=> $cod,
+            'notifikasi' => $notifikasi,
             'produk' => $produk,
         ]);
     });
