@@ -32,7 +32,7 @@
                     @endif
                 </div>
                 <div class="flex justify-between">
-                    <button type="submit" data-modal-toggle="add-cart"
+                    <button type="submit" data-modal-toggle={{ Auth::user()->alamat == NULL ? '' : 'add-cart' }}
                         class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3">Masukan
                         Keranjang</button>
                     {{-- <button

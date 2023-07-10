@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Checkout;
+use App\Models\User;
 use App\Models\Produk;
+use App\Models\Checkout;
 use App\Models\Keranjang;
 use App\Models\Notifikasi;
 use Illuminate\Http\Request;
@@ -41,6 +42,9 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::user()->alamat == NULL) {
+            return redirect('profile-setting')->with('status', 'Silakan Lengkapi Profile terlebih dahulu !');
+        }
         Validator::make($request->all(), [
             'produk_id' => 'required',
             'penjual_id' => 'required',
