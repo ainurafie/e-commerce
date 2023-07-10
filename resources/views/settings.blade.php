@@ -34,6 +34,17 @@
     @endif
     <div class="md:px-24 {{ (Auth::user()->role == "penjual" || Auth::user()->role == "admin") ? 'mt-0' : 'mt-48' }} w-2/3 block mx-auto">
         <h1 class="text-xl font-montserrat font-semibold px-6 mb-12">Profile</h1>
+        @if (session('status'))
+            <div class="bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md" role="alert">
+                <div class="flex">
+                <div class="py-1"><svg class="fill-current h-6 w-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                <div>
+                    <p class="font-bold">Warning</p>
+                    <p class="text-sm">{{ session('status') }}</p>
+                </div>
+                </div>
+            </div>
+        @endif
         <div class="bg-white rounded-xl py-[17px] px-6 ">
         <div class="p-10 bg-white shadow drop-shadow-lg rounded-[8px] mb-6">
             <form method="POST" action="{{ route('profile-setting.update', $data->id) }}" enctype="multipart/form-data">

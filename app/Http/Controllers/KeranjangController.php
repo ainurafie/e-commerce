@@ -38,6 +38,9 @@ class KeranjangController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::user()->alamat == NULL) {
+            return redirect('profile-setting')->with('status', 'Silakan Lengkapi Profile terlebih dahulu !');
+        }
         $data = Keranjang::create([
             'id' => Str::uuid(),
             'user_id' => $request->user_id,

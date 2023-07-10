@@ -102,7 +102,7 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -114,7 +114,38 @@ class ProdukController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(Auth::user()->role != "penjual") {
+            return view("403");
+        }
+        // Validator::make($request->all(), [
+        //     'name' => 'required',
+        //     'stok' => 'required',
+        //     'harga' => 'required',
+        //     'jenis' => 'required',
+        //     'deskripsi' => 'required',
+        //     'size' => 'required',
+        //     'group_a' => 'required',
+        //     'images' => 'required|file|size:2048'
+        // ]);
+        $path = 'Produk'; 
+        $file = $request->file('images');
+        Storage::putFileAs($path, $file, $file->getClientOriginalName());
+        
+        $data = [
+            'user_id' => Auth::user()->id,
+            'nama' => $request->name,
+            'deskripsi' => $request->deskripsi,
+            'stok' => $request->stok,
+            'harga' => $request->harga,
+            'jenis' => $request->jenis,
+            'gambar' => $path . '/' . $file->getClientOriginalName(),
+            'ukuran' => json_encode($request->size),
+            'varian' => json_encode($request->group_a),
+        ];
+
+        Produk::where('id', $id)->update($data);
+
+        return redirect('/penjual/produk');
     }
 
     /**

@@ -346,7 +346,7 @@
                                     <input type="text" name="harga" value="{{ $data->harga }}" hidden> 
                                     <input class="total-item3 collapse text-center w-10 border-none" type="text"
                                     value="1" name="jumlah" />
-                                    <button type="submit" data-modal-toggle="add-cart"
+                                    <button type="submit" data-modal-toggle={{ Auth::user()->alamat == NULL ? '' : 'add-cart' }} 
                                         class="bg-white font-montserrat font-semibold text-sm text-[#004E11] shadow rounded-lg py-2 px-3 mb-3">Tambah
                                         Keranjang</button>
                                     </div>
