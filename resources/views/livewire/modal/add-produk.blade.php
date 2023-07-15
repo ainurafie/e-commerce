@@ -53,10 +53,10 @@
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
                     Deskripsi<label class="text-[#CB3A26]">*</label>
                 </h1>
-                <textarea rows="2" name="deskripsi"
-                class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
-                placeholder="Masukkan deskripsi produk disini" required>
-                </textarea>
+                <textarea rows="2" name="deskripsi" required
+                    class="bg-white border border-[#D4EDDA] text-black font-light text-sm rounded-lg block w-full p-2.5"
+                    placeholder="Masukkan deskripsi produk disini"></textarea>
+                    </textarea>
             </div>
             <div class="relative mb-5">
                 <h1 class="text-sm font-medium font-montserrat text-black mb-2.5">
