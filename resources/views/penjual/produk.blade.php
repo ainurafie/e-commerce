@@ -116,14 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-5 border-r ">
-                    <div class=" px-8">
-                        <h1 class="text-[#C2C0C0] text-sm font-medium font-montserrat line-clamp-5">Lorem ipsum dolor
-                            sit amet consectetur. Faucibus consectetur gravida aenean viverra eget. Turpis enim mauris
-                            quam egestas id dolor eros. Gravida adipiscing nunc quis nec consequat.</h1>
-                    </div>
-                </div>
-                <div class="col-span-3 flex items-center justify-center">
+                <div class="col-span-8 flex items-center justify-center">
                     <div class="ps-3">
                         @php
                             $ulasan = App\Models\Ulasan::where('penjual_id', Auth::user()->id)->count();
