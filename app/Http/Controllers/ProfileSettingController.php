@@ -100,8 +100,12 @@ class ProfileSettingController extends Controller
 
         $update = User::where('id', Auth::user()->id)->first();
         $update->update($data);
-        if($update) {
+        if(Auth::user()->role == "pembeli") {
             return redirect('/');
+        }elseif(Auth::user()->role == "penjual") {
+            return redirect('/penjual');
+        }elseif(Auth::user()->role == "admin") {
+            return redirect('/super-admin');
         }
     }
 

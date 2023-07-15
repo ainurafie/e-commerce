@@ -32,7 +32,7 @@
             <h1 class="text-2xl font-montserrat font-semibold">Terbaru</h1>
             <div class="mt-7 h-[500px] w-full overflow-x-auto">
                 <div class="flex gap-5 w-full flex-wrap">
-                    <livewire:card.produck.index />
+                    <livewire:card.produck.index :batas="6" />
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                 <h1 class="text-2xl font-montserrat font-semibold">Paling banyak Terjual</h1>
                 <div class="mt-7 h-[500px] w-full overflow-x-auto">
                     <div class="flex gap-5 w-full flex-wrap">
-                        <livewire:card.produck.index :terlaris="Auth::user()->id"/>
+                        <livewire:card.produck.index :terlaris="Auth::user()->id" :batas="5"/>
                     </div>
                 </div>
             </div>
