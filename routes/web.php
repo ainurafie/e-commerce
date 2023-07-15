@@ -120,6 +120,7 @@ Route::prefix('/super-admin')->middleware('auth')->group(function() {
         }else {
             return view("403");
         }
+        
     });
     Route::resource('/pesananAdmin', PesananAdminController::class);
     Route::get('/laporan', function () {
