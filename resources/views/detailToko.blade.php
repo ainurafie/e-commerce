@@ -79,7 +79,7 @@
             </div>
             <h1 class="text-2xl font-montserrat font-semibold">Semua Produk</h1>
             <div class="mt-7 h-[500px] w-full overflow-x-auto">
-                <div class="flex gap-5 w-full">
+                <div class="flex gap-5 w-full flex-wrap">
                     <livewire:card.produck.index :index="$data->id"/>
                 </div>
             </div>
