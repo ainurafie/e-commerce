@@ -40,18 +40,18 @@
         </div>
         <div class="">
             <h1 class="text-xl text-black font-montserrat font-semibold mt-2 mb-7">Pesanan</h1>
-            <div class="flex gap-7 mb-9">
-                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
-                    <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Produk  Dipesan</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $data->count() }} Produk</h1>
+            <div class="flex flex-wrap gap-7 mb-9 w-full">
+                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px] w-full">
+                    <h1 class="text-xs text-[#5C5C5C] font-montserrat mb-2.5">Produk  Dipesan</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat">{{ $data->count() }} Produk</h1>
                 </div>
-                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
-                    <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Pesanan COD</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $cod }} Produk</h1>
+                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px] w-full">
+                    <h1 class="text-xs text-[#5C5C5C] font-montserrat mb-2.5">Pesanan COD</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat">{{ $cod }} Produk</h1>
                 </div>
-                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px]">
-                    <h1 class="text-xs text-[#5C5C5C] font-montserrat text-center mb-2.5">Pesanan Transfer</h1>
-                    <h1 class="text-lg text-black font-medium font-montserrat text-center">{{ $bca }} Produk</h1>
+                <div class="py-3 px-9 bg-[#D4EDDA] rounded-[8px] w-full">
+                    <h1 class="text-xs text-[#5C5C5C] font-montserrat mb-2.5">Pesanan Transfer</h1>
+                    <h1 class="text-lg text-black font-medium font-montserrat">{{ $bca }} Produk</h1>
                 </div>
             </div>
             <div class="relative  overflow-x-auto shadow-md sm:rounded-lg">
