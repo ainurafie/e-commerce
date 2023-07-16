@@ -23,9 +23,7 @@
             style="background-image: url('../assets/images/banner.svg');">
             <div class="flex flex-col justify-center h-full">
                 <h1 class="text-[32px] text-[#004E11] font-montserrat font-semibold w-1/2">Padukan gaya mu dengan
-                    aksesoris terkini</h1>
-                <button class="rounded-2xl px-4 py-3 w-max text-white bg-[#004E11] mt-5">Telusuri Lainnya</button>
-                <button></button>
+                    aksesoris terkini <br/> dari UMKM di Kabupaten Banyumas </h1>
             </div>
         </div>
         <div class="py-7">
@@ -84,7 +82,7 @@
                                 fill="#008276" />
                         </svg>
                     </a>
-                    <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Fashion</h1>
+                    <h1 class="text-xs font-semibold text-[#8E8E8E] mt-2 text-center">Pakaian</h1>
                 </div>
                 <div class="w-max">
                     <a href="/kategori/aksesoris" class="w-max">
@@ -143,30 +141,26 @@
             </div>
 
             <div class="grid grid-cols-2 w-full py-16 justify-items-center">
-                <a href="/wedding-organizer" class="relative hover:brightness-75 mb-[14px]">
                     <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
                         style="background-image: url('../assets/images/sehat.svg');">
-                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Sehat <br /> Untuk
-                            Tubuh
+                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Produk sehat <br /> untuk
+                            tubuh
                         </h1>
                     </div>
                 </a>
-                <a href="/" class="relative hover:brightness-75 mb-[14px]">
                     <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
                         style="background-image: url('../assets/images/hand.svg');">
-                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Hand Craft</h1>
+                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Hand Craft <br/> berkualitas <br /> dan terpercaya</h1>
                     </div>
                 </a>
-                <a href="/" class="relative hover:brightness-75">
                     <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
                         style="background-image: url('../assets/images/kopi.svg');">
-                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Kopi</h1>
+                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Temukan <br/> minuman <br/> kesukaanmu</h1>
                     </div>
                 </a>
-                <a href="/" class="relative hover:brightness-75">
                     <div class="bg-no-repeat bg-center bg-cover flex items-center lg:h-[237px] lg:w-[504px] rounded-lg lg:mt-0 mt-5 px-12"
                         style="background-image: url('../assets/images/khas.svg');">
-                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Khas <br /> Purwokerto
+                        <h1 class=" text-white font-montserrat lg:text-[32px] font-bold text-xl">Khas <br /> wilayah <br/> Banyumas
                         </h1>
                     </div>
                 </a>

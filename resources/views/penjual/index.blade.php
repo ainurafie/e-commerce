@@ -153,21 +153,6 @@
             <div class="grid grid-cols-3 gap-5">
                 <div class="col-span-2">
                     <div class="flex justify-end gap-5 mb-6">
-                        <select name="category"
-                            class="bg-white w-max border border-[#CDCDCD] text-[#CDCDCD] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                            <option value="" selected>Bulan ini</option>
-                            <option value=""></option>
-                        </select>
-                        <button data-modal-toggle="pesanan"
-                            class="text-[#E7E7E7] flex gap-3 items-center font-montserrat font-semibold text-sm bg-[#2AA345] rounded-lg py-2.5 px-4"><svg
-                                width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.8332 10.8332H10.8332V15.8332H9.1665V10.8332H4.1665V9.1665H9.1665V4.1665H10.8332V9.1665H15.8332V10.8332Z"
-                                    fill="#FAFAFA" />
-                            </svg>
-                            Tambah
-                        </button>
                     </div>
                     <div class="flex gap-5 w-full">
                         <livewire:card.terjual />
