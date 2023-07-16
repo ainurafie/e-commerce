@@ -23,7 +23,6 @@
     <livewire:navbar.index :index="Auth::user()->id"/>
     <div class="md:px-24 mt-32">
         <h1 class="text-xl font-montserrat font-semibold px-2">Keranjang</h1>
-        @if ($data)
         @foreach ($data as $d)
         <div class="bg-white rounded-xl py-[17px] px-6 ">
             <div class="grid grid-cols-12">
@@ -117,9 +116,6 @@
             </div>
         </div>
         @endforeach
-        @else
-        <img src="..\assets\images\cart-empty.jpg" alt="" width="100%">
-        @endif
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

@@ -181,3 +181,84 @@
         color: white;
     }
 </style>
+<script src="https://cdn.tailwindcss.com"></script>
+                                            <script>
+                                            function addImageRepeater() {
+                                                const repeaterContainer = document.querySelector('#repeater-container');
+                                                const repeaterTemplate = document.querySelector('#repeater-template');
+
+                                                const newRepeater = repeaterTemplate.content.cloneNode(true);
+                                                const input = newRepeater.querySelector('input');
+                                                input.addEventListener('change', function() {
+                                                    previewImage(this);
+                                                });
+
+                                                const deleteButton = newRepeater.querySelector('.delete-button');
+                                                deleteButton.addEventListener('click', function() {
+                                                    deleteRepeater(this);
+                                                });
+
+                                                repeaterContainer.appendChild(newRepeater);
+                                            }
+
+                                            function deleteRepeater(button) {
+                                                const repeater = button.parentNode.parentNode;
+                                                repeater.parentNode.removeChild(repeater);
+                                            }
+
+                                            function previewImage(input) {
+                                                const imgPreview = input.parentNode.querySelector('.img-preview');
+
+                                                imgPreview.style.display = 'block';
+
+                                                const oFReader = new FileReader();
+
+                                                oFReader.readAsDataURL(input.files[0]);
+                                                oFReader.onload = function(oFREvent) {
+                                                    imgPreview.src = oFREvent.target.result;
+                                                };
+                                            }
+                                            </script>
+
+                                            <template id="repeater-template">
+                                            <div class="repeater">
+                                                <label type="file" name="image-product" required>
+                                                    <span class="">
+                                                        <img class="img-preview w-24 h-24 border-2 rounded-2xl hover:bg-slate-200 cursor-pointer"
+                                                            alt="">
+                                                    </span>
+                                                    <input class="hidden" type="file" name="images">
+                                                    <button class="delete-button" onclick="deleteRepeater(this)">Delete</button>
+                                                </label>
+                                            </div>
+                                            </template>
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+                                            integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+                                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
+                                            integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
+                                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                                            <script>
+                                            $(document).ready(function() {
+                                                $('.repeater').repeater({
+                                                    // (Optional)
+                                                    // start with an empty list of repeaters. Set your first (and only)
+                                                    // "data-repeater-item" with style="display:none;" and pass the
+                                                    // following configuration flag
+                                                    initEmpty: false,
+                                                    defaultValues: {
+                                                        'text-input': 'foo'
+                                                    },
+                                                    show: function() {
+                                                        $(this).slideDown();
+                                                    },
+                                                    hide: function(deleteElement) {
+                                                        if (confirm('Are you sure you want to delete?')) {
+                                                            $(this).slideUp(deleteElement);
+                                                        }
+                                                    },
+                                                    isFirstItemUndeletable: true
+                                                })
+                                            });
+                                        </script>
