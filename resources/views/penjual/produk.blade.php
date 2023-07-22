@@ -35,8 +35,8 @@
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
         <div class="bg-[#D4EDDA] px-24 py-11 rounded-lg">
             <div class="bg-white px-[52px] py-[10px] grid grid-cols-12 rounded-lg">
-                <div class="col-span-4 border-r ">
-                    <div class="flex gap-5 items-center ">
+                <div class="col-span-4 border-r">
+                    <div class="flex gap-5 items-center flex flex-col space-y-6 sm:flex-row sm:space-y-0 items-center space-x-0 sm:space-x-6 w-full md:w-fit">
                         <img src="{{ Storage::url(Auth::user()->image) }}" alt="" class="w-24 h-24 rounded-full">
                         <div class="">
                             <h1 class="text-xl font-montserrat font-semibold text-black mb-2">{{ Auth::user()->toko }}</h1>
@@ -51,7 +51,7 @@
                         @php
                             $ulasan = App\Models\Ulasan::where('penjual_id', Auth::user()->id)->count();
                         @endphp
-                        <h1 class="text-sm font-montserrat mb-[14px] font-semibold">Penjual ini medapatkan {{ $ulasan }} Ulasan</h1>
+                        <h1 class="text-sm font-montserrat mb-[14px] font-semibold">Penjual ini mendapatkan {{ $ulasan }} Ulasan</h1>
                     </div>
                 </div>
             </div>
