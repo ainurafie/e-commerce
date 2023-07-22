@@ -20,50 +20,41 @@
 <body>
     <livewire:sidebar.penjual />
     <div class="mt-24 mb-24 ms-56 me-12">
-        <h2 class="font-semibold mb-4 text-xl">Bantuan</h2>
+        <h2 class="font-semibold mb-4 text-xl">Bantuan Penjual</h2>
         <hr>
         <div class="grid grid-cols-2 gap-4 p-4">
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana Cara Menjual Produk ?</p>
+                <p>Untuk menjual produk anda harus mendaftarkan diri terlebih dahulu dengan melengkapi profile setelah melakukan registrasi akun.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana Cara Menerima Pesanan ?</p>
+                <p>Untuk menerima pesanan anda dapat melihat pada halaman Pesanan. Pada halaman tersebut anda dapat melihat pesanan produk baru anda.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana cara mengantarkan produk ?</p>
+                <p>Pesanan produk dari pembeli terdapat nomor telepon sehingga dipersilahkan untuk menghubungi pembeli untuk melakukan kesepakatan pengantaran pesanan atas kebijakan kedua belah pihak.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah penjual boleh tidak mengantarkan barang ?</p>
+                <p>Pembeli merupakan mereka  yang diharapkan area nya sesuai dengan penjual, jadi sebisa mungkin penjual dapat menjual produk.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah boleh menghubungi nomor pengguna yang terdaftar pada halaman keranjang ?</p>
+                <p>Boleh, sebagai fungsi dari keberadaan website untuk membantu penjual mempromosikan produknya.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana cara mengetahui pengguna yang membeli secara transfer dan menjadi lebih aman ?</p>
+                <p>Untuk penjualan secara transfer keuangan akan diatur oleh UMKM Banyumasan.</p>
+            </div>
+            <div class="mr-4">
+                <p class="font-semibold">Apakah harus melayani pembelian secara transfer ?</p>
+                <p>Pembeli bisa melakukan pembayaran secara langsung maupun transfer.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
-            </div>
-            <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
-            </div>
-            <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
-            </div>
-            <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
-            </div>
-            
+                <p class="font-semibold">Apakah ada biaya admin untuk mendaftar di website ini ?</p>
+                <p>Tidak ada biaya admin, penjual boleh mendaftarkan produk dan akun secara gratis.</p>
+            </div>       
         </div>
     </div>
     <livewire:footer.index />
