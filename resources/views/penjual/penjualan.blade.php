@@ -41,9 +41,9 @@
         <div class="">
             <h1 class="text-xl text-black font-montserrat font-semibold mt-2 mb-7">Penjualan</h1>
             <div class="mb-9">
-                <div class="py-3 px-9 bg-[#F2FCF4] rounded-[8px] w-max">
-                    <div class="flex gap-11">
-                        <div class="flex gap-6 items-center">
+                <div class="py-3 px-9 w-full">
+                    <div class="flex md:flex-row flex-col gap-11 w-full">
+                        <div class="flex gap-6 items-center rounded-[8px] py-[30px] px-5 w-full bg-[#F2FCF4]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 7L12 2L2 7V17L12 22L22 17V7Z" stroke="url(#paint0_linear_244_1013)"
@@ -90,7 +90,7 @@
                                 <h1 class="text-black font-montserrat font-medium text-lg">{{ $terjual->sum('terjual') }} Produk</h1>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-center border-l border-r px-[30px] border-[#1A5427]">
+                        <div class="flex gap-6 items-center rounded-[8px] py-[30px] px-5 w-full bg-[#F2FCF4]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 7L12 2L2 7V17L12 22L22 17V7Z" stroke="url(#paint0_linear_244_1013)"
@@ -152,7 +152,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-center">
+                        <div class="flex gap-6 items-center rounded-[8px] py-[30px] px-5 w-full bg-[#F2FCF4]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 7L12 2L2 7V17L12 22L22 17V7Z" stroke="url(#paint0_linear_244_1013)"

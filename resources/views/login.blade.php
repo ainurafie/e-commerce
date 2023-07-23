@@ -19,8 +19,8 @@
 <body>
     <div class="">
         <div class="bg-[#F3FFF2] py-32">
-            <div class="flex gap-16 justify-center">
-                <img src="../assets/images/login.svg" alt="" class="h-[412px]">
+            <div class="flex flex-wrap gap-16 justify-center">
+                <img src="../assets/images/login.svg" alt="" class="md:h-[412px] h-[206px]">
                 <div class="bg-white py-9 rounded-xl px-14 w-[480px]">
                 <form method="POST" action="{{ route('login.store') }}">
                 @csrf

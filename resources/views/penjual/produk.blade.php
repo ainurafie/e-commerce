@@ -33,9 +33,9 @@
     <livewire:sidebar.penjual />
     <div class="p-4 sm:ml-52">
         <h1 class="text-xl font-montserrat font-semibold">Detail Produk</h1>
-        <div class="bg-[#D4EDDA] px-24 py-11 rounded-lg">
-            <div class="bg-white px-[52px] py-[10px] grid grid-cols-12 rounded-lg">
-                <div class="col-span-4 border-r ">
+        <div class="bg-[#D4EDDA] md:px-24 px-10 md:py-11 py-4 rounded-lg">
+            <div class="bg-white md:px-[52px] py-[10px] grid md:grid-cols-12 grid-cols-1 rounded-lg">
+                <div class="md:col-span-4 border-r ">
                     <div class="flex gap-5 items-center ">
                         <img src="{{ Storage::url(Auth::user()->image) }}" alt="" class="w-24 h-24 rounded-full">
                         <div class="">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-8 flex items-center justify-center">
+                <div class="md:col-span-8 flex items-center justify-center">
                     <div class="ps-3">
                         @php
                             $ulasan = App\Models\Ulasan::where('penjual_id', Auth::user()->id)->count();

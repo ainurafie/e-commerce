@@ -150,7 +150,7 @@
         </div>
         <div class="">
             <h1 class="text-xl text-black font-montserrat font-semibold">Rekap</h1>
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
                 <div class="col-span-2">
                     <div class="flex justify-end gap-5 mb-6">
                         <select name="category"
@@ -169,7 +169,7 @@
                             Tambah
                         </button>
                     </div>
-                    <div class="flex gap-5 w-full">
+                    <div class="flex md:flex-row flex-col gap-5 w-full">
                         <livewire:card.terjual />
                         <livewire:card.pendapatan />
                         <livewire:card.pengunjung />
