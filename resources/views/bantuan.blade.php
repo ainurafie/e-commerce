@@ -28,40 +28,40 @@
                 <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana Cara Membayar Produk ?</p>
+                <p>Pembayaran masih menggunakan pembayaran secara tunai jika COD dan Transfer menggunakan BCA.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah harus di daerah yang sama untuk melakukan pembelian?</p>
+                <p>Diharapkan pembeli mencari penjual dengan daerah yang dapat terjangkau oleh penjual karena untuk memudahkan proses pengantaran yang dilakukan tanpa pihak ekspedisi barang</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Bagaimana jika ada barang yang tidak sesuai?</p>
+                <p>Jika pembeli merasa barang tidak sesuai atau ada indikasi penipuan maka bisa melakukan pelaporan dengan memilih laporkan barang.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apa yang dilakukan setelah melekukan pembelian?</p>
+                <p>Anda akan dihubungi oleh pihak penjual menggunakan nomor telepon yang terdaftar, maka dari itu pastikan nomor yang anda daftarkan adalah nomor aktif.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah bisa melakukan pembatalan?</p>
+                <p>Saat ini belum disediakan barang yang dibatalkan saat pembelian untuk membantu UMKM memaksimalkan penjualan, pastikan barang yang akan anda beli sudah sesuai.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah boleh belanja melalui beberapa toko?</p>
+                <p>Boleh, dengan catatan tidak melakukan pembelian di keranjang yang disimpan tetapi melalui masing-masing toko</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Apakah aman bertransaksi pada website ini?</p>
+                <p>Aman apabila pembeli mengikuti aturan dari website yang sudah ditentukan sebelumnya.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Berapa lama waktu barang pembelian kita sampai?</p>
+                <p>Barang akan sampai ke pembeli tergantung pada proses pengantaran dari penjual, diharapkan dapat berkomunikasi dengan baik dengan penjual.</p>
             </div>
             <div class="">
-                <p class="font-semibold">Bagaimana Cara Membeli Produk ?</p>
-                <p>Untuk membeli produk ini anda harus memilih salah satu produk kemudian dapat memilih beli produk kemudian lakukan pembayaran.</p>
+                <p class="font-semibold">Kapan waktu yang baik dalam berbelanja?</p>
+                <p>Kapanpun dapat dilakukan, namun untuk proses pengantaran dan transaksi akan diatur oleh pihak penjual.</p>
             </div>
             
         </div>
