@@ -44,9 +44,6 @@
                         <th scope="col" class="px-6 py-3">
                             Ulasan
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Rating
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,35 +65,6 @@
                         </td>
                         <td class="px-6 py-4">
                             {{$user->alamat}}
-                        </td>
-                        <td class="px-6 py-4">
-                            <div class="flex gap-1 items-center">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.6775 13.3L3.815 8.3825L0 5.075L5.04 4.6375L7 0L8.96 4.6375L14 5.075L10.185 8.3825L11.3225 13.3L7 10.6925L2.6775 13.3Z"
-                                        fill="#FFDD2A" />
-                                </svg>
-
-                            </div>
                         </td>
                     </tr>
                     @endforeach
