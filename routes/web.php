@@ -51,6 +51,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::resource('/ulasan', UlasanController::class);
     Route::get('/bantuan', function() {
+        if (Auth::user()->role == 'penjual') {
+            return view('bantuan-penjual');
+        }
         return view('bantuan');
     });
     Route::post('/laporkan', function(Request $request) {

@@ -246,6 +246,9 @@
                             </a>
                             </td>
                             <td class="px-6 py-4">
+                                {{ $d->no }}
+                            </td>
+                            <td class="px-6 py-4">
                                 {{ $d->jumlah }}
                             </td>
                             <td class="px-6 py-4">
