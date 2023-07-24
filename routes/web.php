@@ -193,3 +193,7 @@ Route::prefix('penjual')->middleware('auth')->group(function() {
 Route::get('403', function() {
     return view('403');
 });
+
+Route::get('/contoh', function(){
+    return view('contoh');
+});

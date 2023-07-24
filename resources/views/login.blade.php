@@ -17,14 +17,19 @@
 </head>
 
 <body>
-    <div class="">
+    <div class="">   
         <div class="bg-[#F3FFF2] py-32">
             <div class="flex gap-16 justify-center">
                 <img src="../assets/images/login.svg" alt="" class="h-[412px]">
-                <div class="bg-white py-9 rounded-xl px-14 w-[480px]">
+                <div class="bg-white py-0.5 rounded-xl px-14 w-[480px]">
                 <form method="POST" action="{{ route('login.store') }}">
                 @csrf
-                    <div class="flex h-full flex-col justify-center">
+                    <div class="flex w-full flex-col justify-center">
+                        <div class="w-full justify-center flex"> 
+                    <a href="#" class="flex items-center mb-0.5 text-2xl font-semibold text-gray-900 dark:text-white">
+          <img class="justify-center w-48 h-40 mr-18" src="/assets/images/logo.svg" alt="logo"> 
+      </a>
+                        </div>
                         <h1 class="text-sm font-montserrat text-[#0C0C0C] text-center font-semibold mb-3">Login</h1>
                         <div class="relative mb-5">
                             <h1 class="text-xs font-montserrat text-[#858585] mb-2.5">
